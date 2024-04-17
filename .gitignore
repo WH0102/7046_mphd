@@ -1,3 +1,5 @@
 *.csv
 *.txt
+*.env
 str_address
+str_partition

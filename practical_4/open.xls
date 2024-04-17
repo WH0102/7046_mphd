@@ -1,0 +1,742 @@
+﻿id,Sex,Age,Marital,Employment
+1,Male,55-64,Married/Cohabiting,Employed
+2,Male,25-44,Married/Cohabiting,Nonemployed
+3,Male,25-44,Married/Cohabiting,Employed
+4,Male,55-64,Married/Cohabiting,Employed
+5,Male,55-64,Married/Cohabiting,Employed
+6,Female,25-44,Married/Cohabiting,Employed
+7,Female,55-64,Widowed/ Divorced,Nonemployed
+8,Male,25-44,Married/Cohabiting,Unemployed
+9,Female,25-44,Single,Employed
+10,Male,55-64,Married/Cohabiting,Employed
+11,Female,25-44,Married/Cohabiting,Employed
+12,Female,55-64,Married/Cohabiting,Employed
+13,Male,25-44,Married/Cohabiting,Employed
+14,Male,55-64,Married/Cohabiting,Nonemployed
+15,Female,25-44,Married/Cohabiting,Employed
+16,Male,25-44,Married/Cohabiting,Employed
+17,Female,25-44,Single,Employed
+18,Male,55-64,Married/Cohabiting,Employed
+19,Female,25-44,Married/Cohabiting,Nonemployed
+20,Female,45-54,Widowed/ Divorced,Employed
+21,Female,55-64,Married/Cohabiting,Employed
+22,Female,45-54,Married/Cohabiting,Nonemployed
+23,Male,25-44,Married/Cohabiting,Employed
+24,Female,25-44,Single,Employed
+25,Female,55-64,Widowed/ Divorced,Employed
+26,Male,55-64,Married/Cohabiting,Employed
+27,Female,25-44,Widowed/ Divorced,Employed
+28,Male,25-44,Married/Cohabiting,Employed
+29,Female,25-44,Widowed/ Divorced,Nonemployed
+30,Male,45-54,Married/Cohabiting,Employed
+31,Female,25-44,Married/Cohabiting,Nonemployed
+32,Female,25-44,Married/Cohabiting,Employed
+33,Male,25-44,Married/Cohabiting,Employed
+34,Female,25-44,Married/Cohabiting,Employed
+35,Female,55-64,Married/Cohabiting,Nonemployed
+36,Male,25-44,Married/Cohabiting,Employed
+37,Female,25-44,Single,Employed
+38,Female,25-44,Married/Cohabiting,Nonemployed
+39,Male,25-44,Married/Cohabiting,Employed
+40,Female,45-54,Married/Cohabiting,Employed
+41,Female,25-44,Single,Employed
+42,Male,55-64,Single,Employed
+43,Female,25-44,Married/Cohabiting,Employed
+44,Female,25-44,Married/Cohabiting,Nonemployed
+45,Female,25-44,Married/Cohabiting,Employed
+46,Female,25-44,Single,Employed
+47,Male,45-54,Widowed/ Divorced,Employed
+48,Female,25-44,Single,Employed
+49,Female,25-44,Married/Cohabiting,Employed
+50,Male,25-44,Married/Cohabiting,Employed
+51,Female,55-64,Widowed/ Divorced,Unemployed
+52,Female,25-44,Married/Cohabiting,Employed
+53,Female,25-44,Single,Nonemployed
+54,Female,45-54,Single,Employed
+55,Male,25-44,Married/Cohabiting,Employed
+56,Male,45-54,Married/Cohabiting,Employed
+57,Female,25-44,Married/Cohabiting,Nonemployed
+58,Male,55-64,Married/Cohabiting,Employed
+59,Female,25-44,Married/Cohabiting,Employed
+60,Male,55-64,Married/Cohabiting,Employed
+61,Female,25-44,Married/Cohabiting,Employed
+62,Female,55-64,Widowed/ Divorced,Employed
+63,Female,25-44,Single,Unemployed
+64,Male,25-44,Widowed/ Divorced,Nonemployed
+65,Male,45-54,Married/Cohabiting,Employed
+66,Female,55-64,Married/Cohabiting,Employed
+67,Male,25-44,Married/Cohabiting,Employed
+68,Female,25-44,Single,Employed
+69,Male,25-44,Single,Employed
+70,Female,45-54,Married/Cohabiting,Employed
+71,Male,25-44,Married/Cohabiting,Employed
+72,Female,25-44,Single,Employed
+73,Female,45-54,Married/Cohabiting,Employed
+74,Male,25-44,Married/Cohabiting,Employed
+75,Female,25-44,Married/Cohabiting,Employed
+76,Male,55-64,Married/Cohabiting,Nonemployed
+77,Male,45-54,Married/Cohabiting,Employed
+78,Female,25-44,Married/Cohabiting,Employed
+79,Female,25-44,Married/Cohabiting,Nonemployed
+80,Female,25-44,Single,Employed
+81,Male,55-64,Married/Cohabiting,Nonemployed
+82,Female,25-44,Widowed/ Divorced,Employed
+83,Female,25-44,Single,Employed
+84,Female,25-44,Married/Cohabiting,Employed
+85,Female,55-64,Widowed/ Divorced,Nonemployed
+86,Male,45-54,Married/Cohabiting,Employed
+87,Male,25-44,Single,Employed
+88,Male,25-44,Single,Employed
+89,Female,25-44,Married/Cohabiting,Employed
+90,Female,25-44,Married/Cohabiting,Nonemployed
+91,Female,25-44,Single,Employed
+92,Male,25-44,Married/Cohabiting,Employed
+93,Male,55-64,Married/Cohabiting,Employed
+94,Male,25-44,Married/Cohabiting,Employed
+95,Male,45-54,Married/Cohabiting,Employed
+96,Female,25-44,Single,Nonemployed
+97,Female,45-54,Married/Cohabiting,Nonemployed
+98,Male,45-54,Married/Cohabiting,Employed
+99,Female,25-44,Married/Cohabiting,Nonemployed
+100,Female,45-54,Married/Cohabiting,Employed
+101,Male,55-64,Married/Cohabiting,Employed
+102,Female,25-44,Single,Employed
+103,Female,25-44,Married/Cohabiting,Employed
+104,Male,55-64,Single,Nonemployed
+105,Male,25-44,Married/Cohabiting,Nonemployed
+106,Female,55-64,Single,Employed
+107,Male,55-64,Single,Employed
+108,Female,25-44,Married/Cohabiting,Nonemployed
+109,Male,55-64,Married/Cohabiting,Nonemployed
+110,Female,45-54,Widowed/ Divorced,Employed
+111,Male,25-44,Married/Cohabiting,Employed
+112,Male,25-44,Married/Cohabiting,Employed
+113,Male,55-64,Married/Cohabiting,Employed
+114,Male,25-44,Married/Cohabiting,Employed
+115,Female,45-54,Single,Employed
+116,Female,45-54,Married/Cohabiting,Employed
+117,Male,45-54,Widowed/ Divorced,Employed
+118,Female,45-54,Single,Employed
+119,Male,55-64,Married/Cohabiting,Employed
+120,Female,45-54,Married/Cohabiting,Employed
+121,Male,55-64,Widowed/ Divorced,Employed
+122,Male,25-44,Married/Cohabiting,Employed
+123,Female,55-64,Married/Cohabiting,Employed
+124,Female,55-64,Widowed/ Divorced,Nonemployed
+125,Female,25-44,Married/Cohabiting,Employed
+126,Male,55-64,Married/Cohabiting,Employed
+127,Female,55-64,Widowed/ Divorced,Employed
+128,Male,25-44,Married/Cohabiting,Employed
+129,Male,55-64,Married/Cohabiting,Employed
+130,Male,25-44,Married/Cohabiting,Employed
+131,Female,55-64,Married/Cohabiting,Employed
+132,Male,55-64,Widowed/ Divorced,Employed
+133,Female,25-44,Married/Cohabiting,Employed
+134,Male,45-54,Married/Cohabiting,Employed
+135,Female,55-64,Married/Cohabiting,Nonemployed
+136,Male,25-44,Widowed/ Divorced,Employed
+137,Male,25-44,Single,Unemployed
+138,Male,45-54,Married/Cohabiting,Employed
+139,Male,45-54,Married/Cohabiting,Employed
+140,Male,55-64,Married/Cohabiting,Employed
+141,Male,45-54,Married/Cohabiting,Employed
+142,Female,25-44,Widowed/ Divorced,Employed
+143,Male,45-54,Widowed/ Divorced,Employed
+144,Female,45-54,Married/Cohabiting,Employed
+145,Female,45-54,Widowed/ Divorced,Employed
+146,Male,25-44,Married/Cohabiting,Employed
+147,Male,45-54,Widowed/ Divorced,Employed
+148,Male,45-54,Married/Cohabiting,Employed
+149,Male,45-54,Married/Cohabiting,Employed
+150,Female,25-44,Single,Employed
+151,Female,45-54,Married/Cohabiting,Employed
+152,Male,25-44,Widowed/ Divorced,Nonemployed
+153,Female,45-54,Married/Cohabiting,Employed
+154,Male,55-64,Widowed/ Divorced,Employed
+155,Female,55-64,Married/Cohabiting,Nonemployed
+156,Male,55-64,Married/Cohabiting,Employed
+157,Female,25-44,Married/Cohabiting,Nonemployed
+158,Female,25-44,Widowed/ Divorced,Employed
+159,Female,25-44,Married/Cohabiting,Employed
+160,Female,45-54,Married/Cohabiting,Employed
+161,Male,55-64,Widowed/ Divorced,Nonemployed
+162,Male,25-44,Single,Employed
+163,Female,25-44,Married/Cohabiting,Employed
+164,Female,45-54,Widowed/ Divorced,Employed
+165,Female,55-64,Widowed/ Divorced,Employed
+166,Female,45-54,Married/Cohabiting,Nonemployed
+167,Male,25-44,Married/Cohabiting,Employed
+168,Female,25-44,Single,Nonemployed
+169,Male,45-54,Married/Cohabiting,Unemployed
+170,Male,25-44,Married/Cohabiting,Nonemployed
+171,Female,25-44,Married/Cohabiting,Nonemployed
+172,Male,25-44,Married/Cohabiting,Employed
+173,Female,25-44,Married/Cohabiting,Employed
+174,Female,25-44,Single,Employed
+175,Male,25-44,Single,Employed
+176,Male,45-54,Single,Nonemployed
+177,Male,25-44,Married/Cohabiting,Employed
+178,Female,55-64,Married/Cohabiting,Nonemployed
+179,Male,25-44,Married/Cohabiting,Employed
+180,Male,45-54,Single,Employed
+181,Female,45-54,Married/Cohabiting,Employed
+182,Male,25-44,Married/Cohabiting,Employed
+183,Male,25-44,Married/Cohabiting,Employed
+184,Female,25-44,Married/Cohabiting,Employed
+185,Female,25-44,Married/Cohabiting,Employed
+186,Female,25-44,Single,Employed
+187,Male,45-54,Married/Cohabiting,Employed
+188,Female,25-44,Married/Cohabiting,Employed
+189,Female,45-54,Married/Cohabiting,Employed
+190,Male,25-44,Married/Cohabiting,Employed
+191,Female,25-44,Single,Nonemployed
+192,Male,25-44,Married/Cohabiting,Employed
+193,Male,45-54,Married/Cohabiting,Employed
+194,Female,25-44,Widowed/ Divorced,Employed
+195,Female,45-54,Widowed/ Divorced,Employed
+196,Female,45-54,Married/Cohabiting,Employed
+197,Female,45-54,Married/Cohabiting,Nonemployed
+198,Female,25-44,Single,Employed
+199,Male,55-64,Married/Cohabiting,Employed
+200,Female,25-44,Widowed/ Divorced,Employed
+201,Male,25-44,Single,Employed
+202,Male,55-64,Single,Unemployed
+203,Female,25-44,Single,Employed
+204,Male,25-44,Married/Cohabiting,Employed
+205,Male,55-64,Married/Cohabiting,Nonemployed
+206,Male,25-44,Married/Cohabiting,Employed
+207,Female,25-44,Married/Cohabiting,Employed
+208,Male,55-64,Married/Cohabiting,Employed
+209,Male,25-44,Widowed/ Divorced,Employed
+210,Male,55-64,Married/Cohabiting,Nonemployed
+211,Male,25-44,Married/Cohabiting,Employed
+212,Female,45-54,Single,Employed
+213,Female,25-44,Married/Cohabiting,Nonemployed
+214,Female,45-54,Single,Employed
+215,Female,25-44,Married/Cohabiting,Nonemployed
+216,Female,55-64,Married/Cohabiting,Nonemployed
+217,Female,55-64,Married/Cohabiting,Nonemployed
+218,Female,45-54,Married/Cohabiting,Nonemployed
+219,Male,25-44,Married/Cohabiting,Employed
+220,Male,45-54,Single,Employed
+221,Male,55-64,Widowed/ Divorced,Nonemployed
+222,Male,55-64,Widowed/ Divorced,Nonemployed
+223,Male,55-64,Widowed/ Divorced,Nonemployed
+224,Male,25-44,Single,Employed
+225,Male,45-54,Widowed/ Divorced,Unemployed
+226,Female,25-44,Married/Cohabiting,Nonemployed
+227,Female,25-44,Widowed/ Divorced,Unemployed
+228,Female,55-64,Widowed/ Divorced,Nonemployed
+229,Female,25-44,Married/Cohabiting,Employed
+230,Male,25-44,Married/Cohabiting,Employed
+231,Female,25-44,Widowed/ Divorced,Employed
+232,Female,55-64,Married/Cohabiting,Employed
+233,Female,55-64,Married/Cohabiting,Nonemployed
+234,Male,25-44,Married/Cohabiting,Unemployed
+235,Female,25-44,Single,Nonemployed
+236,Female,25-44,Married/Cohabiting,Unemployed
+237,Female,25-44,Married/Cohabiting,Employed
+238,Male,45-54,Single,Employed
+239,Female,25-44,Married/Cohabiting,Employed
+240,Female,25-44,Widowed/ Divorced,Employed
+241,Female,55-64,Widowed/ Divorced,Employed
+242,Male,25-44,Married/Cohabiting,Employed
+243,Female,25-44,Married/Cohabiting,Employed
+244,Male,25-44,Widowed/ Divorced,Unemployed
+245,Male,25-44,Married/Cohabiting,Employed
+246,Male,25-44,Single,Unemployed
+247,Female,55-64,Married/Cohabiting,Nonemployed
+248,Male,25-44,Single,Employed
+249,Female,55-64,Widowed/ Divorced,Nonemployed
+250,Female,25-44,Married/Cohabiting,Employed
+251,Female,55-64,Married/Cohabiting,Nonemployed
+252,Female,25-44,Single,Employed
+253,Male,25-44,Widowed/ Divorced,Unemployed
+254,Male,25-44,Married/Cohabiting,Employed
+255,Male,55-64,Married/Cohabiting,Employed
+256,Female,25-44,Married/Cohabiting,Unemployed
+257,Female,25-44,Single,Employed
+258,Female,45-54,Married/Cohabiting,Nonemployed
+259,Female,55-64,Widowed/ Divorced,Employed
+260,Male,25-44,Single,Employed
+261,Female,25-44,Married/Cohabiting,Employed
+262,Female,25-44,Married/Cohabiting,Employed
+263,Female,25-44,Single,Employed
+264,Female,25-44,Widowed/ Divorced,Employed
+265,Female,25-44,Married/Cohabiting,Employed
+266,Female,55-64,Widowed/ Divorced,Nonemployed
+267,Female,55-64,Single,Employed
+268,Male,55-64,Married/Cohabiting,Nonemployed
+269,Female,45-54,Married/Cohabiting,Employed
+270,Female,25-44,Married/Cohabiting,Nonemployed
+271,Female,25-44,Single,Employed
+272,Female,25-44,Married/Cohabiting,Employed
+273,Male,55-64,Single,Nonemployed
+274,Female,55-64,Widowed/ Divorced,Nonemployed
+275,Female,55-64,Married/Cohabiting,Nonemployed
+276,Male,45-54,Married/Cohabiting,Employed
+277,Female,25-44,Married/Cohabiting,Nonemployed
+278,Male,25-44,Widowed/ Divorced,Unemployed
+279,Female,45-54,Married/Cohabiting,Employed
+280,Male,45-54,Married/Cohabiting,Employed
+281,Male,45-54,Widowed/ Divorced,Employed
+282,Male,55-64,Married/Cohabiting,Nonemployed
+283,Female,55-64,Married/Cohabiting,Unemployed
+284,Female,25-44,Married/Cohabiting,Employed
+285,Female,45-54,Single,Employed
+286,Female,45-54,Widowed/ Divorced,Unemployed
+287,Male,55-64,Married/Cohabiting,Employed
+288,Female,25-44,Single,Employed
+289,Male,55-64,Married/Cohabiting,Nonemployed
+290,Female,25-44,Married/Cohabiting,Nonemployed
+291,Female,25-44,Married/Cohabiting,Employed
+292,Female,25-44,Single,Nonemployed
+293,Male,25-44,Married/Cohabiting,Employed
+294,Female,45-54,Widowed/ Divorced,Nonemployed
+295,Female,25-44,Married/Cohabiting,Employed
+296,Female,55-64,Widowed/ Divorced,Employed
+297,Male,45-54,Married/Cohabiting,Employed
+298,Male,45-54,Single,Employed
+299,Male,25-44,Married/Cohabiting,Employed
+300,Female,25-44,Widowed/ Divorced,Employed
+301,Female,55-64,Widowed/ Divorced,Employed
+302,Male,45-54,Married/Cohabiting,Employed
+303,Male,55-64,Married/Cohabiting,Nonemployed
+304,Female,45-54,Single,Nonemployed
+305,Male,25-44,Single,Employed
+306,Male,55-64,Married/Cohabiting,Employed
+307,Female,25-44,Widowed/ Divorced,Employed
+308,Female,25-44,Single,Employed
+309,Male,55-64,Married/Cohabiting,Employed
+310,Male,25-44,Single,Employed
+311,Female,25-44,Married/Cohabiting,Nonemployed
+312,Female,45-54,Single,Employed
+313,Female,45-54,Widowed/ Divorced,Employed
+314,Male,25-44,Single,Employed
+315,Female,25-44,Single,Employed
+316,Female,25-44,Widowed/ Divorced,Nonemployed
+317,Male,45-54,Single,Unemployed
+318,Male,55-64,Married/Cohabiting,Employed
+319,Female,55-64,Widowed/ Divorced,Employed
+320,Male,25-44,Married/Cohabiting,Employed
+321,Male,45-54,Widowed/ Divorced,Employed
+322,Female,25-44,Married/Cohabiting,Nonemployed
+323,Female,25-44,Married/Cohabiting,Employed
+324,Female,55-64,Widowed/ Divorced,Nonemployed
+325,Female,25-44,Married/Cohabiting,Employed
+326,Female,45-54,Married/Cohabiting,Nonemployed
+327,Female,45-54,Married/Cohabiting,Employed
+328,Male,45-54,Married/Cohabiting,Employed
+329,Male,55-64,Single,Employed
+330,Female,55-64,Married/Cohabiting,Nonemployed
+331,Female,55-64,Married/Cohabiting,Employed
+332,Female,25-44,Married/Cohabiting,Employed
+333,Female,55-64,Married/Cohabiting,Nonemployed
+334,Male,55-64,Married/Cohabiting,Nonemployed
+335,Male,25-44,Married/Cohabiting,Employed
+336,Male,25-44,Widowed/ Divorced,Employed
+337,Male,45-54,Married/Cohabiting,Employed
+338,Female,25-44,Married/Cohabiting,Employed
+339,Female,25-44,Widowed/ Divorced,Employed
+340,Male,45-54,Widowed/ Divorced,Nonemployed
+341,Male,25-44,Married/Cohabiting,Employed
+342,Female,45-54,Married/Cohabiting,Employed
+343,Male,55-64,Married/Cohabiting,Nonemployed
+344,Female,25-44,Single,Employed
+345,Male,55-64,Single,Employed
+346,Female,55-64,Married/Cohabiting,Employed
+347,Female,25-44,Married/Cohabiting,Employed
+348,Female,25-44,Married/Cohabiting,Employed
+349,Female,45-54,Married/Cohabiting,Employed
+350,Female,25-44,Married/Cohabiting,Employed
+351,Female,25-44,Married/Cohabiting,Employed
+352,Male,25-44,Married/Cohabiting,Employed
+353,Female,25-44,Married/Cohabiting,Nonemployed
+354,Female,55-64,Married/Cohabiting,Employed
+355,Male,45-54,Single,Employed
+356,Female,55-64,Widowed/ Divorced,Employed
+357,Male,55-64,Married/Cohabiting,Employed
+358,Male,45-54,Widowed/ Divorced,Employed
+359,Female,25-44,Married/Cohabiting,Employed
+360,Male,25-44,Married/Cohabiting,Unemployed
+361,Female,25-44,Single,Unemployed
+362,Female,25-44,Married/Cohabiting,Nonemployed
+363,Male,25-44,Single,Employed
+364,Male,25-44,Married/Cohabiting,Employed
+365,Female,45-54,Widowed/ Divorced,Employed
+366,Female,25-44,Widowed/ Divorced,Nonemployed
+367,Female,25-44,Single,Employed
+368,Female,45-54,Married/Cohabiting,Employed
+369,Male,45-54,Married/Cohabiting,Employed
+370,Female,25-44,Married/Cohabiting,Employed
+371,Male,55-64,Married/Cohabiting,Nonemployed
+372,Female,25-44,Widowed/ Divorced,Employed
+373,Male,25-44,Married/Cohabiting,Employed
+374,Male,25-44,Married/Cohabiting,Employed
+375,Female,25-44,Married/Cohabiting,Employed
+376,Female,25-44,Married/Cohabiting,Employed
+377,Female,55-64,Married/Cohabiting,Employed
+378,Male,25-44,Married/Cohabiting,Employed
+379,Female,45-54,Single,Employed
+380,Female,55-64,Widowed/ Divorced,Employed
+381,Female,25-44,Married/Cohabiting,Employed
+382,Female,25-44,Married/Cohabiting,Employed
+383,Female,25-44,Single,Employed
+384,Male,25-44,Single,Employed
+385,Male,55-64,Married/Cohabiting,Employed
+386,Male,25-44,Single,Nonemployed
+387,Female,55-64,Married/Cohabiting,Employed
+388,Female,45-54,Single,Employed
+389,Female,25-44,Married/Cohabiting,Employed
+390,Female,25-44,Married/Cohabiting,Nonemployed
+391,Female,25-44,Married/Cohabiting,Employed
+392,Male,25-44,Married/Cohabiting,Employed
+393,Female,25-44,Single,Nonemployed
+394,Male,45-54,Married/Cohabiting,Employed
+395,Male,55-64,Married/Cohabiting,Employed
+396,Female,45-54,Married/Cohabiting,Employed
+397,Female,25-44,Married/Cohabiting,Employed
+398,Male,25-44,Married/Cohabiting,Employed
+399,Male,55-64,Married/Cohabiting,Employed
+400,Male,55-64,Single,Employed
+401,Female,25-44,Married/Cohabiting,Employed
+402,Male,45-54,Widowed/ Divorced,Employed
+403,Male,25-44,Married/Cohabiting,Employed
+404,Female,25-44,Single,Employed
+405,Female,55-64,Married/Cohabiting,Nonemployed
+406,Male,25-44,Single,Employed
+407,Female,45-54,Married/Cohabiting,Nonemployed
+408,Male,55-64,Married/Cohabiting,Employed
+409,Male,25-44,Single,Nonemployed
+410,Female,25-44,Married/Cohabiting,Nonemployed
+411,Male,25-44,Married/Cohabiting,Employed
+412,Female,45-54,Married/Cohabiting,Employed
+413,Female,25-44,Single,Employed
+414,Male,55-64,Married/Cohabiting,Employed
+415,Female,25-44,Married/Cohabiting,Employed
+416,Female,25-44,Single,Employed
+417,Male,45-54,Married/Cohabiting,Nonemployed
+418,Male,25-44,Single,Nonemployed
+419,Male,25-44,Married/Cohabiting,Employed
+420,Female,25-44,Married/Cohabiting,Nonemployed
+421,Male,25-44,Single,Employed
+422,Male,25-44,Single,Unemployed
+423,Female,25-44,Married/Cohabiting,Employed
+424,Male,55-64,Married/Cohabiting,Employed
+425,Male,25-44,Married/Cohabiting,Employed
+426,Male,45-54,Married/Cohabiting,Employed
+427,Female,25-44,Single,Nonemployed
+428,Male,45-54,Married/Cohabiting,Nonemployed
+429,Female,45-54,Single,Unemployed
+430,Female,25-44,Married/Cohabiting,Employed
+431,Female,25-44,Married/Cohabiting,Unemployed
+432,Male,45-54,Single,Employed
+433,Female,55-64,Married/Cohabiting,Nonemployed
+434,Female,25-44,Married/Cohabiting,Employed
+435,Male,45-54,Single,Employed
+436,Male,45-54,Married/Cohabiting,Employed
+437,Male,55-64,Single,Employed
+438,Male,45-54,Married/Cohabiting,Employed
+439,Male,45-54,Married/Cohabiting,Employed
+440,Female,45-54,Married/Cohabiting,Employed
+441,Male,55-64,Married/Cohabiting,Nonemployed
+442,Female,55-64,Married/Cohabiting,Employed
+443,Female,25-44,Married/Cohabiting,Employed
+444,Male,55-64,Single,Employed
+445,Female,25-44,Single,Employed
+446,Female,55-64,Married/Cohabiting,Nonemployed
+447,Male,25-44,Married/Cohabiting,Employed
+448,Male,45-54,Married/Cohabiting,Employed
+449,Male,25-44,Married/Cohabiting,Employed
+450,Male,25-44,Married/Cohabiting,Employed
+451,Female,55-64,Married/Cohabiting,Nonemployed
+452,Female,25-44,Married/Cohabiting,Employed
+453,Male,55-64,Married/Cohabiting,Employed
+454,Male,45-54,Widowed/ Divorced,Employed
+455,Male,45-54,Married/Cohabiting,Employed
+456,Female,55-64,Married/Cohabiting,Employed
+457,Female,55-64,Married/Cohabiting,Employed
+458,Female,55-64,Widowed/ Divorced,Unemployed
+459,Male,45-54,Widowed/ Divorced,Employed
+460,Male,25-44,Single,Employed
+461,Female,25-44,Married/Cohabiting,Employed
+462,Female,25-44,Married/Cohabiting,Employed
+463,Female,55-64,Married/Cohabiting,Employed
+464,Male,45-54,Married/Cohabiting,Employed
+465,Male,25-44,Single,Employed
+466,Male,25-44,Married/Cohabiting,Employed
+467,Female,25-44,Married/Cohabiting,Nonemployed
+468,Female,45-54,Widowed/ Divorced,Employed
+469,Female,45-54,Married/Cohabiting,Employed
+470,Female,45-54,Married/Cohabiting,Employed
+471,Female,45-54,Single,Employed
+472,Female,25-44,Married/Cohabiting,Employed
+473,Male,55-64,Married/Cohabiting,Employed
+474,Female,55-64,Single,Employed
+475,Female,25-44,Married/Cohabiting,Nonemployed
+476,Male,25-44,Married/Cohabiting,Employed
+477,Female,55-64,Married/Cohabiting,Employed
+478,Female,55-64,Married/Cohabiting,Nonemployed
+479,Female,25-44,Single,Employed
+480,Female,25-44,Single,Employed
+481,Female,45-54,Widowed/ Divorced,Employed
+482,Female,25-44,Widowed/ Divorced,Nonemployed
+483,Male,45-54,Married/Cohabiting,Employed
+484,Male,25-44,Married/Cohabiting,Employed
+485,Male,55-64,Married/Cohabiting,Nonemployed
+486,Female,25-44,Married/Cohabiting,Employed
+487,Female,25-44,Single,Nonemployed
+488,Male,55-64,Married/Cohabiting,Employed
+489,Male,45-54,Married/Cohabiting,Employed
+490,Female,55-64,Married/Cohabiting,Nonemployed
+491,Male,45-54,Married/Cohabiting,Employed
+492,Female,25-44,Widowed/ Divorced,Employed
+493,Female,55-64,Widowed/ Divorced,Unemployed
+494,Male,25-44,Married/Cohabiting,Employed
+495,Female,55-64,Married/Cohabiting,Employed
+496,Male,55-64,Married/Cohabiting,Employed
+497,Female,25-44,Married/Cohabiting,Nonemployed
+498,Male,45-54,Married/Cohabiting,Employed
+499,Male,25-44,Married/Cohabiting,Employed
+500,Female,55-64,Married/Cohabiting,Employed
+501,Male,55-64,Married/Cohabiting,Employed
+502,Female,25-44,Married/Cohabiting,Nonemployed
+503,Male,55-64,Married/Cohabiting,Employed
+504,Female,25-44,Married/Cohabiting,Employed
+505,Female,55-64,Widowed/ Divorced,Employed
+506,Male,45-54,Married/Cohabiting,Employed
+507,Female,25-44,Married/Cohabiting,Employed
+508,Female,25-44,Married/Cohabiting,Employed
+509,Male,55-64,Single,Nonemployed
+510,Female,25-44,Single,Employed
+511,Male,45-54,Married/Cohabiting,Employed
+512,Female,45-54,Married/Cohabiting,Unemployed
+513,Male,55-64,Single,Nonemployed
+514,Male,25-44,Married/Cohabiting,Employed
+515,Female,25-44,Married/Cohabiting,Employed
+516,Female,25-44,Married/Cohabiting,Employed
+517,Male,45-54,Married/Cohabiting,Employed
+518,Female,25-44,Widowed/ Divorced,Unemployed
+519,Male,25-44,Married/Cohabiting,Employed
+520,Female,45-54,Single,Nonemployed
+521,Female,25-44,Married/Cohabiting,Employed
+522,Female,25-44,Married/Cohabiting,Nonemployed
+523,Female,25-44,Married/Cohabiting,Employed
+524,Female,55-64,Married/Cohabiting,Nonemployed
+525,Male,25-44,Single,Unemployed
+526,Male,55-64,Widowed/ Divorced,Nonemployed
+527,Female,45-54,Widowed/ Divorced,Nonemployed
+528,Female,25-44,Widowed/ Divorced,Employed
+529,Female,55-64,Single,Nonemployed
+530,Female,55-64,Married/Cohabiting,Employed
+531,Male,25-44,Married/Cohabiting,Employed
+532,Male,25-44,Married/Cohabiting,Employed
+533,Male,55-64,Married/Cohabiting,Nonemployed
+534,Male,25-44,Single,Employed
+535,Male,25-44,Married/Cohabiting,Employed
+536,Male,25-44,Married/Cohabiting,Employed
+537,Male,25-44,Widowed/ Divorced,Employed
+538,Female,25-44,Single,Nonemployed
+539,Male,25-44,Widowed/ Divorced,Nonemployed
+540,Female,25-44,Married/Cohabiting,Nonemployed
+541,Female,45-54,Married/Cohabiting,Employed
+542,Male,55-64,Married/Cohabiting,Employed
+543,Female,45-54,Married/Cohabiting,Unemployed
+544,Female,25-44,Married/Cohabiting,Employed
+545,Male,25-44,Married/Cohabiting,Employed
+546,Female,25-44,Widowed/ Divorced,Employed
+547,Male,55-64,Married/Cohabiting,Employed
+548,Male,25-44,Married/Cohabiting,Employed
+549,Male,25-44,Married/Cohabiting,Employed
+550,Male,55-64,Married/Cohabiting,Employed
+551,Male,25-44,Married/Cohabiting,Employed
+552,Male,55-64,Married/Cohabiting,Employed
+553,Female,25-44,Married/Cohabiting,Nonemployed
+554,Female,25-44,Widowed/ Divorced,Nonemployed
+555,Male,45-54,Married/Cohabiting,Employed
+556,Female,45-54,Widowed/ Divorced,Employed
+557,Male,55-64,Single,Employed
+558,Female,45-54,Married/Cohabiting,Employed
+559,Male,25-44,Married/Cohabiting,Employed
+560,Male,55-64,Married/Cohabiting,Employed
+561,Male,45-54,Married/Cohabiting,Employed
+562,Female,25-44,Married/Cohabiting,Employed
+563,Male,55-64,Single,Unemployed
+564,Female,25-44,Married/Cohabiting,Employed
+565,Male,55-64,Married/Cohabiting,Employed
+566,Male,25-44,Married/Cohabiting,Employed
+567,Male,25-44,Married/Cohabiting,Employed
+568,Female,25-44,Single,Employed
+569,Male,25-44,Married/Cohabiting,Nonemployed
+570,Male,45-54,Married/Cohabiting,Employed
+571,Male,25-44,Married/Cohabiting,Employed
+572,Male,45-54,Widowed/ Divorced,Unemployed
+573,Male,25-44,Widowed/ Divorced,Employed
+574,Male,25-44,Married/Cohabiting,Employed
+575,Female,25-44,Married/Cohabiting,Employed
+576,Male,25-44,Married/Cohabiting,Employed
+577,Female,45-54,Married/Cohabiting,Employed
+578,Male,25-44,Single,Unemployed
+579,Female,25-44,Married/Cohabiting,Employed
+580,Male,25-44,Married/Cohabiting,Employed
+581,Male,45-54,Married/Cohabiting,Employed
+582,Female,45-54,Married/Cohabiting,Nonemployed
+583,Male,55-64,Married/Cohabiting,Nonemployed
+584,Female,55-64,Married/Cohabiting,Nonemployed
+585,Female,25-44,Married/Cohabiting,Employed
+586,Female,25-44,Married/Cohabiting,Employed
+587,Female,25-44,Married/Cohabiting,Employed
+588,Female,55-64,Married/Cohabiting,Employed
+589,Male,25-44,Married/Cohabiting,Employed
+590,Female,25-44,Single,Unemployed
+591,Female,25-44,Married/Cohabiting,Employed
+592,Female,45-54,Married/Cohabiting,Employed
+593,Male,55-64,Married/Cohabiting,Employed
+594,Female,25-44,Single,Employed
+595,Female,25-44,Married/Cohabiting,Employed
+596,Female,25-44,Single,Employed
+597,Female,25-44,Single,Unemployed
+598,Male,25-44,Married/Cohabiting,Employed
+599,Female,25-44,Married/Cohabiting,Employed
+600,Male,55-64,Married/Cohabiting,Employed
+601,Male,25-44,Married/Cohabiting,Employed
+602,Male,25-44,Single,Nonemployed
+603,Female,25-44,Widowed/ Divorced,Employed
+604,Male,45-54,Married/Cohabiting,Employed
+605,Male,55-64,Married/Cohabiting,Employed
+606,Male,45-54,Married/Cohabiting,Employed
+607,Male,55-64,Single,Nonemployed
+608,Male,25-44,Married/Cohabiting,Employed
+609,Female,25-44,Married/Cohabiting,Employed
+610,Male,25-44,Married/Cohabiting,Employed
+611,Male,25-44,Single,Employed
+612,Female,25-44,Widowed/ Divorced,Employed
+613,Female,25-44,Widowed/ Divorced,Nonemployed
+614,Female,55-64,Widowed/ Divorced,Nonemployed
+615,Male,55-64,Married/Cohabiting,Employed
+616,Male,45-54,Married/Cohabiting,Employed
+617,Female,25-44,Married/Cohabiting,Employed
+618,Male,45-54,Married/Cohabiting,Employed
+619,Male,25-44,Single,Unemployed
+620,Male,45-54,Married/Cohabiting,Employed
+621,Male,25-44,Single,Unemployed
+622,Male,25-44,Married/Cohabiting,Employed
+623,Female,25-44,Widowed/ Divorced,Employed
+624,Female,55-64,Widowed/ Divorced,Nonemployed
+625,Female,25-44,Single,Employed
+626,Female,55-64,Married/Cohabiting,Employed
+627,Male,45-54,Married/Cohabiting,Employed
+628,Male,55-64,Married/Cohabiting,Employed
+629,Male,25-44,Widowed/ Divorced,Employed
+630,Male,45-54,Married/Cohabiting,Unemployed
+631,Male,25-44,Married/Cohabiting,Employed
+632,Male,25-44,Single,Employed
+633,Female,55-64,Single,Employed
+634,Female,45-54,Married/Cohabiting,Employed
+635,Male,45-54,Married/Cohabiting,Employed
+636,Female,25-44,Married/Cohabiting,Employed
+637,Female,45-54,Widowed/ Divorced,Employed
+638,Female,25-44,Married/Cohabiting,Employed
+639,Male,55-64,Married/Cohabiting,Employed
+640,Male,25-44,Widowed/ Divorced,Employed
+641,Male,25-44,Married/Cohabiting,Employed
+642,Female,45-54,Widowed/ Divorced,Employed
+643,Male,45-54,Widowed/ Divorced,Employed
+644,Male,45-54,Married/Cohabiting,Employed
+645,Female,25-44,Married/Cohabiting,Employed
+646,Female,25-44,Married/Cohabiting,Employed
+647,Male,55-64,Married/Cohabiting,Employed
+648,Male,45-54,Married/Cohabiting,Employed
+649,Male,25-44,Single,Employed
+650,Female,25-44,Married/Cohabiting,Nonemployed
+651,Female,55-64,Widowed/ Divorced,Nonemployed
+652,Female,55-64,Married/Cohabiting,Nonemployed
+653,Female,55-64,Married/Cohabiting,Nonemployed
+654,Female,25-44,Single,Employed
+655,Female,45-54,Married/Cohabiting,Employed
+656,Female,25-44,Single,Nonemployed
+657,Female,25-44,Widowed/ Divorced,Employed
+658,Male,55-64,Married/Cohabiting,Employed
+659,Female,55-64,Married/Cohabiting,Employed
+660,Male,25-44,Single,Employed
+661,Male,45-54,Married/Cohabiting,Employed
+662,Female,55-64,Married/Cohabiting,Employed
+663,Female,45-54,Widowed/ Divorced,Nonemployed
+664,Female,55-64,Married/Cohabiting,Nonemployed
+665,Female,55-64,Single,Employed
+666,Male,45-54,Married/Cohabiting,Employed
+667,Male,25-44,Single,Employed
+668,Female,55-64,Married/Cohabiting,Employed
+669,Male,45-54,Married/Cohabiting,Employed
+670,Female,25-44,Widowed/ Divorced,Employed
+671,Female,25-44,Single,Employed
+672,Male,25-44,Widowed/ Divorced,Nonemployed
+673,Female,45-54,Married/Cohabiting,Employed
+674,Male,45-54,Married/Cohabiting,Employed
+675,Male,55-64,Married/Cohabiting,Employed
+676,Female,45-54,Single,Employed
+677,Female,25-44,Widowed/ Divorced,Employed
+678,Female,45-54,Single,Nonemployed
+679,Female,45-54,Widowed/ Divorced,Nonemployed
+680,Male,25-44,Married/Cohabiting,Employed
+681,Female,55-64,Married/Cohabiting,Nonemployed
+682,Female,45-54,Married/Cohabiting,Employed
+683,Male,25-44,Married/Cohabiting,Nonemployed
+684,Female,25-44,Married/Cohabiting,Employed
+685,Female,25-44,Widowed/ Divorced,Nonemployed
+686,Female,55-64,Married/Cohabiting,Employed
+687,Female,25-44,Married/Cohabiting,Employed
+688,Female,45-54,Single,Employed
+689,Male,25-44,Married/Cohabiting,Employed
+690,Female,25-44,Married/Cohabiting,Employed
+691,Female,25-44,Married/Cohabiting,Employed
+692,Female,55-64,Married/Cohabiting,Employed
+693,Male,25-44,Married/Cohabiting,Employed
+694,Female,25-44,Single,Employed
+695,Male,55-64,Widowed/ Divorced,Unemployed
+696,Male,45-54,Single,Employed
+697,Male,25-44,Married/Cohabiting,Employed
+698,Male,55-64,Single,Employed
+699,Female,55-64,Married/Cohabiting,Nonemployed
+700,Male,25-44,Married/Cohabiting,Employed
+701,Female,45-54,Married/Cohabiting,Employed
+702,Male,45-54,Married/Cohabiting,Employed
+703,Male,25-44,Married/Cohabiting,Employed
+704,Female,25-44,Married/Cohabiting,Nonemployed
+705,Male,45-54,Married/Cohabiting,Employed
+706,Female,25-44,Married/Cohabiting,Employed
+707,Female,25-44,Married/Cohabiting,Nonemployed
+708,Male,25-44,Married/Cohabiting,Employed
+709,Female,45-54,Widowed/ Divorced,Employed
+710,Female,25-44,Married/Cohabiting,Employed
+711,Male,25-44,Widowed/ Divorced,Employed
+712,Female,25-44,Single,Employed
+713,Male,55-64,Married/Cohabiting,Employed
+714,Male,25-44,Married/Cohabiting,Employed
+715,Male,25-44,Married/Cohabiting,Employed
+716,Female,25-44,Married/Cohabiting,Employed
+717,Male,55-64,Married/Cohabiting,Nonemployed
+718,Female,45-54,Single,Employed
+719,Male,25-44,Single,Unemployed
+720,Female,55-64,Married/Cohabiting,Nonemployed
+721,Male,25-44,Single,Employed
+722,Male,25-44,Married/Cohabiting,Employed
+723,Male,45-54,Married/Cohabiting,Employed
+724,Female,25-44,Widowed/ Divorced,Employed
+725,Female,45-54,Married/Cohabiting,Employed
+726,Female,55-64,Married/Cohabiting,Nonemployed
+727,Male,25-44,Single,Nonemployed
+728,Female,25-44,Married/Cohabiting,Employed
+729,Male,25-44,Single,Unemployed
+730,Male,55-64,Married/Cohabiting,Employed
+731,Female,55-64,Married/Cohabiting,Nonemployed
+732,Female,45-54,Widowed/ Divorced,Employed
+733,Female,25-44,Married/Cohabiting,Employed
+734,Female,55-64,Married/Cohabiting,Employed
+735,Male,45-54,Married/Cohabiting,Employed
+736,Female,25-44,Married/Cohabiting,Employed
+737,Male,45-54,Married/Cohabiting,Employed
+738,Male,25-44,Single,Unemployed
+739,Female,25-44,Single,Employed
+740,Male,25-44,Married/Cohabiting,Employed
+741,Male,45-54,Widowed/ Divorced,Employed
