@@ -15,7 +15,7 @@ geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
 
 def getting_str_geolocation(df) -> None:
     # To run the program in loop of 100
-    for num in range(1183700, len(df), 100):
+    for num in range(1526400, len(df), 100):
         # For monitoring in the terminal
         print(f"{num:,d}")
         # To avoid unnecessary ping
@@ -38,7 +38,7 @@ def getting_str_geolocation(df) -> None:
             print(f"Address from {num} - {num+100} have no geolocation returned.")
         
         # Print a separator
-        print("---------------------------------")
+        print("----------------------------------------------------------------------------------------------------")
 
 
 
