@@ -1,5 +1,7 @@
 *.csv
 *.txt
 *.env
+*.xlsx
+*.pyc
 str_address
 str_partition

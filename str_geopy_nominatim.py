@@ -1,11 +1,14 @@
 import pandas as pd
 from geopy.geocoders import Nominatim
+from geopy.exc import GeocoderTimedOut, GeocoderRateLimited, GeocoderNotFound
 from geopy.extra.rate_limiter import RateLimiter
 import time
 import warnings
 
 # setting ignore as a parameter and further adding category
-warnings.simplefilter(action='ignore', category=FutureWarning) 
+warnings.simplefilter(action='ignore', category=FutureWarning)
+warnings.filterwarnings(action="ignore")
+
 
 # Setting the nominatim user agent
 geolocator = Nominatim(user_agent="str_address_geocoding")
@@ -15,30 +18,47 @@ geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
 
 def getting_str_geolocation(df) -> None:
     # To run the program in loop of 100
-    for num in range(1526400, len(df), 100):
+    add_loop = 1000
+    for num in range(2535000, len(df), add_loop):
         # For monitoring in the terminal
         print(f"{num:,d}")
         # To avoid unnecessary ping
-        time.sleep(1)
+        # time.sleep(1)
         # To slice the dataframe
-        temp_df = df.iloc[num:num+100]
+        temp_df = df.iloc[num:num+add_loop]
         try:
             # To get the geolocation of the address
             temp_df.loc[:,"location"] = temp_df.loc[:,"address"].apply(geocode)
             temp_df.loc[:,'point'] = temp_df.loc[:,'location'].apply(lambda loc: tuple(loc.point) if loc else None)
-        except:
+        except GeocoderTimedOut or GeocoderRateLimited or GeocoderNotFound:
             continue
+
+        # # To try this later on
+        # for index, row in temp_df.iterrows():
+        #     try:
+        #         temp_df.loc[index, "point"] = geocode(temp_df.loc[index, "address"])[1]
+        #     except:
+        #         continue
+        
         # To save as csv file in slice manner.
-        temp_df = temp_df.loc[temp_df.loc[:,"location"].notnull()]
+        geo_df = temp_df.loc[temp_df.loc[:,"location"].notnull()]
 
         # To save the file only if the temp_df is more the 1
-        if len(temp_df) > 0:
-            temp_df.to_csv(f"str_partition/sheet{int(num/100)}.csv", sep = "|", index = False, errors = "ignore")
+        if len(geo_df) > 0:
+            geo_df.to_csv(f"str_partition/sheet{int(num/100)}.csv", sep = "|", index = False, errors = "ignore")
         else:
             print(f"Address from {num} - {num+100} have no geolocation returned.")
-        
+
+        # To save excel file in another folder
+        try:
+            temp_df.loc[temp_df.loc[:,"location"].isnull()]\
+                .to_excel(f"str_google/sheet{int(num/100)}.xlsx", index = False)
+        except:
+            temp_df.loc[temp_df.loc[:,"location"].isnull()]\
+                .to_csv(f"str_google/sheet{int(num/100)}.csv", sep = "|", index = False, errors = "ignore")
+
         # Print a separator
-        print("----------------------------------------------------------------------------------------------------")
+        print("--------------------------------------------------------------------------------")
 
 
 
