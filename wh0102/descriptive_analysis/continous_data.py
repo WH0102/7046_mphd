@@ -18,7 +18,7 @@ class continous_data:
         # To check on independent_variables with cut_off_value to ensure it is continous data
         independent_columns = pre_processing.identify_independent_variable(independent_variables)
 
-        # independent_columns = tuple([column for column in independent_columns if len(df.loc[:,column].unique()) >= cut_off_value])
+        independent_columns = tuple([column for column in independent_columns if len(df.loc[:,column].unique()) >= cut_off_value])
 
         # Using pandas default describe
         descriptive_df = df.describe()

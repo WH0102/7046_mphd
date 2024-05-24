@@ -5,6 +5,7 @@ from .regression.regression import regression
 from .missing_values.missing_values import missing_values
 from .inferential_analysis.inferential_analysis import inferential_analysis
 from .pre_processing.pre_processing import pre_processing
+from .machine_learning.machine_learning import machine_learning
 
 class MPHD:
     def __init__(self) -> None:
@@ -14,3 +15,4 @@ class MPHD:
         self.missing_values = missing_values(self)
         self.inferential_analysis = inferential_analysis(self)
         self.pre_processing = pre_processing(self)
+        self.machine_learning = machine_learning(self)

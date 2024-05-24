@@ -1,17 +1,25 @@
 import pandas as pd
 import numpy as np
+from ..pre_processing.pre_processing import pre_processing
 
 class missing_values:
     def analyse_missing_row(df: pd.DataFrame, ) -> pd.DataFrame:
+        # To make the ' ' into np.nan
+        # Check for empty value ' '
+        for column in df.columns:
+            temp_df = df.query(f"{column} == ' '")
+            if len(temp_df) > 0:
+                df.loc[df.loc[:,column] == ' ', column] = np.nan
+        
         # To prepare the list of null that is more than 0
         missing_data_summary = df.isnull().sum()[df.isnull().sum() > 0]
-
+        # prepare an empty dataframe for return of function
+        missing_df = pd.DataFrame()
         # If there is no missing data
         if len(missing_data_summary) == 0:
             # Print a statement to allow user to understand
             print("No missing value detected from the dataframe above.")
-            # prepare an empty dataframe for return of function
-            missing_df = pd.DataFrame()
+
         else: # If missing data detected from the dataframe
             # Generate the missing table data
             missing_data_summary = pd.DataFrame(missing_data_summary).rename(columns = {0:"count"})
@@ -27,7 +35,7 @@ class missing_values:
             # Print the missing values rows information.
             print(f"Missing data detected for columns {", ".join(missing_data_columns)}.")
             print("Summary of the missing values from the dataframe =")
-            print(missing_data_summary.to_markdown(tablefmt = "pretty"))
+            print(missing_data_summary.to_markdown(tablefmt = "pretty"))            
 
         # Return the dataframe with missing values
         return missing_df
@@ -79,6 +87,44 @@ class missing_values:
             
         # Return the dataframe
         return df
+    
+
+    def mice_imputation(df:pd.DataFrame, 
+                        columns:str|list|tuple|None = None,
+                        convert_numeric:bool = True) -> pd.DataFrame:
+        # Impute with MICE
+        # https://medium.com/@brijesh_soni/topic-9-mice-or-multivariate-imputation-with-chain-equation-f8fd435ca91#:~:text=MICE%20stands%20for%20Multivariate%20Imputation,produce%20a%20final%20imputed%20dataset.
+
+        # Import the necessary pacages
+        from sklearn.experimental import enable_iterative_imputer
+        from sklearn.impute import IterativeImputer
+        import polars as pl
+
+        # Generate a deep copy
+        temp_df = df.copy(deep = True)
+        
+        # Create the imputer
+        imputed_values = IterativeImputer().fit_transform(temp_df)
+        # Generate the pandas DataFrame
+        imputed_df = pd.DataFrame(imputed_values, columns = df.columns)
+
+        # Identify the columns
+        if columns != None:
+            # Put the columns as tuple
+            columns = pre_processing.identify_independent_variable(columns)
+            # To loop through the columns
+            for column in columns:
+                temp_df.loc[:,column] = imputed_df.loc[:,column]
+        else: # if no column provided, provide full imputed df
+            temp_df = imputed_df
+
+
+        if convert_numeric == True: # To convert all values again
+            return pl.from_pandas(temp_df).to_pandas()
+        else: # Return the imputed df
+            return temp_df
+
+
 
         
 
