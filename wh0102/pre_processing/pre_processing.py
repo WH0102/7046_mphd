@@ -37,7 +37,7 @@ From which a total of {len(to_drop_duplicated_df)} ({round(len(to_drop_duplicate
     def train_test_split(df:pd.DataFrame, 
                          independent_variables : list|tuple|set|str,
                          dependent_variable:str,
-                         test_size:float = 0.2):
+                         test_size:float = 0.2) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         # import the necessary packages
         from sklearn.model_selection import train_test_split
 
