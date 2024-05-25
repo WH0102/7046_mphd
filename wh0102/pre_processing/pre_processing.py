@@ -33,6 +33,25 @@ From which a total of {len(to_drop_duplicated_df)} ({round(len(to_drop_duplicate
         else: # No duplication found
             print("No duplication found in the dataset.")
             return pd.DataFrame(), pd.DataFrame()
+        
+    def train_test_split(df:pd.DataFrame, 
+                         independent_variables : list|tuple|set|str,
+                         dependent_variable:str,
+                         test_size:float = 0.2):
+        # import the necessary packages
+        from sklearn.model_selection import train_test_split
+
+        # Prepare the independent variables
+        independent_variables = pre_processing.identify_independent_variable(independent_variables)
+
+        # Train test split
+        X_train, X_test, y_train, y_test = train_test_split(df.loc[:,independent_variables],
+                                                            df.loc[:,dependent_variable],
+                                                            test_size=test_size,
+                                                            stratify=df.loc[:,dependent_variable])
+        
+        # Return all dataframe
+        return X_train, X_test, y_train, y_test
 
             
         
