@@ -33,7 +33,7 @@ class missing_values:
             missing_data_summary.loc[:,"missing_percentage"] = (missing_data_summary.loc[:,"count"] / len(df) * 100).round(2)
 
             # Print the missing values rows information.
-            print(f"Missing data detected for columns {", ".join(missing_data_columns)}.")
+            print(f"Missing data detected for columns {', '.join(missing_data_columns)}.")
             print("Summary of the missing values from the dataframe =")
             print(missing_data_summary.to_markdown(tablefmt = "pretty"))            
 
@@ -105,6 +105,45 @@ class missing_values:
         
         # Create the imputer
         imputed_values = IterativeImputer().fit_transform(temp_df)
+        # Generate the pandas DataFrame
+        imputed_df = pd.DataFrame(imputed_values, columns = df.columns)
+
+        # Identify the columns
+        if columns != None:
+            # Put the columns as tuple
+            columns = pre_processing.identify_independent_variable(columns)
+            # To loop through the columns
+            for column in columns:
+                temp_df.loc[:,column] = imputed_df.loc[:,column]
+        else: # if no column provided, provide full imputed df
+            temp_df = imputed_df
+
+
+        if convert_numeric == True: # To convert all values again
+            return pl.from_pandas(temp_df).to_pandas()
+        else: # Return the imputed df
+            return temp_df
+        
+
+    def miss_forest_imputation(df:pd.DataFrame, 
+                               columns:str|list|tuple|None = None,
+                               convert_numeric:bool = True) -> pd.DataFrame:
+        # Impute with Miss Forest
+        # https://betterdatascience.com/python-missforest-algorithm/
+        # pip install missingpy "scikit-learn==1.1.2"
+
+        # Import the necessary pacages
+        import sys
+        import sklearn.neighbors._base
+        sys.modules['sklearn.neighbors.base'] = sklearn.neighbors._base
+        from missingpy import MissForest
+        import polars as pl
+
+        # Generate a deep copy
+        temp_df = df.copy(deep = True)
+        
+        # Create the imputer
+        imputed_values = MissForest(criterion='squared_error', max_features=None).fit_transform(temp_df)
         # Generate the pandas DataFrame
         imputed_df = pd.DataFrame(imputed_values, columns = df.columns)
 

@@ -496,21 +496,21 @@ the residual variance does depend on the variables in x. Hence the model is havi
             print(f"From the summary table above, the {mode} regression with the variable of {independent_variable} seems to be the best choice among all due to:")
             # AIC
             if model_summary.loc[best_index, "aic_akaike_information_criterion"] == model_summary.loc[:,"aic_akaike_information_criterion"].min():
-                print(f"Its AIC value of {model_summary.loc[best_index, "aic_akaike_information_criterion"]} is the lowest among all the models")
+                print(f"""Its AIC value of {model_summary.loc[best_index, "aic_akaike_information_criterion"]} is the lowest among all the models""")
             else:
-                print(f"Its AIC value of {model_summary.loc[best_index, "aic_akaike_information_criterion"]} is faily low as compare to lowest = {model_summary.loc[:,"aic_akaike_information_criterion"].min()}.")
+                print(f"""Its AIC value of {model_summary.loc[best_index, "aic_akaike_information_criterion"]} is faily low as compare to lowest = {model_summary.loc[:,"aic_akaike_information_criterion"].min()}.""")
             # BIC
             if model_summary.loc[best_index, "bic_bayesin_information_criterion"] == model_summary.loc[:,"bic_bayesin_information_criterion"].min():
-                print(f"he BIC of the model ({model_summary.loc[best_index, "bic_bayesin_information_criterion"]}) is the lowest among all the models")
+                print(f"""The BIC of the model ({model_summary.loc[best_index, "bic_bayesin_information_criterion"]}) is the lowest among all the models""")
             else:
-                print(f"he BIC of the model ({model_summary.loc[best_index, "bic_bayesin_information_criterion"]}) is faily low as compare to lowest = {model_summary.loc[:,"bic_bayesin_information_criterion"].min()}.")
+                print(f"""The BIC of the model ({model_summary.loc[best_index, "bic_bayesin_information_criterion"]}) is faily low as compare to lowest = {model_summary.loc[:,"bic_bayesin_information_criterion"].min()}.""")
             # Dispersion Statistic
             if model_summary.loc[best_index, "dispersion_stats"] > 1.2:
-                print(f"However, by dividing the residual_pearson^2 by degree of freedom for residual values is {model_summary.loc[best_index, "dispersion_stats"]} more than 1, indicating overdispersion of the model.")
+                print(f"""However, by dividing the residual_pearson^2 by degree of freedom for residual values is {model_summary.loc[best_index, "dispersion_stats"]} more than 1, indicating overdispersion of the model.""")
             elif model_summary.loc[best_index, "dispersion_stats"] < 0.8:
-                print(f"However, by dividing the residual_pearson^2 by degree of freedom for residual values is {model_summary.loc[best_index, "dispersion_stats"]} less than 1, indicating underdispersion of the model.")
+                print(f"""However, by dividing the residual_pearson^2 by degree of freedom for residual values is {model_summary.loc[best_index, "dispersion_stats"]} less than 1, indicating underdispersion of the model.""")
             else:
-                print(f"In view of dividing the residual_pearson^2 by degree of freedom for residual values is {model_summary.loc[best_index, "dispersion_stats"]} almost equal to 1, indiciating the model is equidispersed.")
+                print(f"""In view of dividing the residual_pearson^2 by degree of freedom for residual values is {model_summary.loc[best_index, "dispersion_stats"]} almost equal to 1, indiciating the model is equidispersed.""")
             print("=======================================================================================")
             model_summary.loc[best_index].model.get_diagnostic().plot_probs().suptitle(f"Probability plot of {independent_variable} vs {dependent_variable}")
 
@@ -535,9 +535,9 @@ the residual variance does depend on the variables in x. Hence the model is havi
                                         params_df.loc[params_df.index != "const","coefficient"], 
                                         exp_params_df.loc[exp_params_df.index != "const","coefficient"]))
             params_partial_formula = " + ".join([f"({round(value[1], round_value)} * {value[0]})" for value in coefficient_list])
-            params_partial_formula = f"{round(params_df.loc["const", "coefficient"], round_value)} + {params_partial_formula}"
+            params_partial_formula = f"""{round(params_df.loc["const", "coefficient"], round_value)} + {params_partial_formula}"""
             exp_partial_formula = " + ".join([f"({value[2]:.2f} * {value[0]})" for value in coefficient_list])
-            exp_partial_formula = f"{round(np.exp(params_df.loc["const", "coefficient"]), round_value)} + {exp_partial_formula}"
+            exp_partial_formula = f"""{round(np.exp(params_df.loc["const", "coefficient"]), round_value)} + {exp_partial_formula}"""
 
             # Prepare significant and not significant coefficient
             significant_coefficient = exp_params_df.loc[exp_params_df.loc[:,"p_value"] <= 0.05]
@@ -551,7 +551,7 @@ the residual variance does depend on the variables in x. Hence the model is havi
             # To analyze based on coefficient
             # For constant
             print("Interpretation of Coefficients:")
-            print(f"The coefficient for constant is {exp_params_df.loc["const", "coefficient"]}, along with p_value of {exp_params_df.loc["const", "p_value"]}, which is significant.")
+            print(f"""The coefficient for constant is {exp_params_df.loc["const", "coefficient"]}, along with p_value of {exp_params_df.loc["const", "p_value"]}, which is significant.""")
 
             # Interpret the coefficients
             for index, row in exp_params_df.loc[exp_params_df.index != "const"].iterrows():
@@ -576,9 +576,9 @@ the residual variance does depend on the variables in x. Hence the model is havi
                                             exp_params_df.loc[exp_params_df.index.isin(inflated_list),"coefficient"]))
                                 
                 inflated_params_formula = " + ".join([f"({round(value[1], round_value)} * {value[0]})" for value in inflated_summary])
-                inflated_params_formula = f"{round(params_df.loc[inflated_const, "coefficient"], round_value)} + {inflated_params_formula}"
+                inflated_params_formula = f"""{round(params_df.loc[inflated_const, "coefficient"], round_value)} + {inflated_params_formula}"""
                 inflated_exp_params_formula = " + ".join([f"({round(value[2], round_value)} * {value[0]})" for value in inflated_summary])
-                inflated_exp_params_formula = f"{round(exp_params_df.loc[inflated_const, "coefficient"], round_value)} + {inflated_exp_params_formula}"
+                inflated_exp_params_formula = f"""{round(exp_params_df.loc[inflated_const, "coefficient"], round_value)} + {inflated_exp_params_formula}"""
 
                 # print the logit part
                 print("For inflate component, the formula as below:")
@@ -586,11 +586,11 @@ the residual variance does depend on the variables in x. Hence the model is havi
                 print(f"Logit(𝜋𝑖) = {inflated_params_formula}")
                 # Check for alpha for negative binominal
                 if "alpha" in params_df.index: 
-                    print(f"Where 𝒚𝒊~𝑵𝒆𝒈𝑩𝒊𝒏(𝝁𝒊, {round(params_df.loc["alpha", "coefficient"], round_value)}), 𝒗𝒂𝒓 𝒚𝒊 = 𝝁𝒊 + {round(params_df.loc["alpha", "coefficient"], round_value)}𝝁𝟐𝒊")
+                    print(f"""Where 𝒚𝒊~𝑵𝒆𝒈𝑩𝒊𝒏(𝝁𝒊, {round(params_df.loc["alpha", "coefficient"], round_value)}), 𝒗𝒂𝒓 𝒚𝒊 = 𝝁𝒊 + {round(params_df.loc["alpha", "coefficient"], round_value)}𝝁𝟐𝒊""")
                 print(f"or if exponentialed it will become:")
                 print(f"𝜋𝑖 = {inflated_exp_params_formula}")
                 if "alpha" in params_df.index:
-                    print(f"Where 𝒚𝒊~𝑵𝒆𝒈𝑩𝒊𝒏(𝝁𝒊, {round(exp_params_df.loc["alpha", "coefficient"], round_value)}), 𝒗𝒂𝒓 𝒚𝒊 = 𝝁𝒊 + {round(exp_params_df.loc["alpha", "coefficient"], round_value)}𝝁𝟐𝒊")
+                    print(f"""Where 𝒚𝒊~𝑵𝒆𝒈𝑩𝒊𝒏(𝝁𝒊, {round(exp_params_df.loc["alpha", "coefficient"], round_value)}), 𝒗𝒂𝒓 𝒚𝒊 = 𝝁𝒊 + {round(exp_params_df.loc["alpha", "coefficient"], round_value)}𝝁𝟐𝒊""")
                 print("-------------------------------------------------------------------------------")
 
                 # To intepret the inflated coefficients
@@ -637,9 +637,9 @@ of {dependent_variable} for every increase of unit in {index}.""")
                                             exp_params_df.loc[exp_params_df.index.isin(not_inflated_list),"coefficient"]))
 
             not_inflated_params_formula = " + ".join([f"({round(value[1], round_value)} * {value[0]})" for value in not_inflated_summary])
-            not_inflated_params_formula = f"{round(params_df.loc[not_inflated_const, "coefficient"], round_value)} + {not_inflated_params_formula}"
+            not_inflated_params_formula = f"""{round(params_df.loc[not_inflated_const, "coefficient"], round_value)} + {not_inflated_params_formula}"""
             not_inflated_exp_params_formula = " + ".join([f"({round(value[2], round_value)} * {value[0]})" for value in not_inflated_summary])
-            not_inflated_exp_params_formula = f"{round(exp_params_df.loc[not_inflated_const, "coefficient"], round_value)} + {not_inflated_exp_params_formula}"
+            not_inflated_exp_params_formula = f"""{round(exp_params_df.loc[not_inflated_const, "coefficient"], round_value)} + {not_inflated_exp_params_formula}"""
 
             # print the poisson part
             print("===============================================================================")
@@ -647,11 +647,11 @@ of {dependent_variable} for every increase of unit in {index}.""")
             print(f"Let 𝜇𝑖 is the mean of {dependent_variable}.")
             print(f"Log(𝜇𝑖) = {not_inflated_params_formula}")
             if "alpha" in params_df.index: 
-                print(f"Where 𝒚𝒊~𝑵𝒆𝒈𝑩𝒊𝒏(𝝁𝒊, {round(params_df.loc["alpha", "coefficient"], round_value)}), 𝒗𝒂𝒓 𝒚𝒊 = 𝝁𝒊 + {round(params_df.loc["alpha", "coefficient"], round_value)}𝝁𝟐𝒊")
+                print(f"""Where 𝒚𝒊~𝑵𝒆𝒈𝑩𝒊𝒏(𝝁𝒊, {round(params_df.loc["alpha", "coefficient"], round_value)}), 𝒗𝒂𝒓 𝒚𝒊 = 𝝁𝒊 + {round(params_df.loc["alpha", "coefficient"], round_value)}𝝁𝟐𝒊""")
             print(f"or if exponentialed it will become:")
             print(f"𝜇𝑖 = {not_inflated_exp_params_formula}")
             if "alpha" in params_df.index: 
-                print(f"Where 𝒚𝒊~𝑵𝒆𝒈𝑩𝒊𝒏(𝝁𝒊, {round(exp_params_df.loc["alpha", "coefficient"], round_value)}), 𝒗𝒂𝒓 𝒚𝒊 = 𝝁𝒊 + {round(exp_params_df.loc["alpha", "coefficient"], round_value)}𝝁𝟐𝒊")
+                print(f"""Where 𝒚𝒊~𝑵𝒆𝒈𝑩𝒊𝒏(𝝁𝒊, {round(exp_params_df.loc["alpha", "coefficient"], round_value)}), 𝒗𝒂𝒓 𝒚𝒊 = 𝝁𝒊 + {round(exp_params_df.loc["alpha", "coefficient"], round_value)}𝝁𝟐𝒊""")
             print("-------------------------------------------------------------------------------")
 
             # Poisson coefficient
@@ -753,10 +753,10 @@ The {LLR_p_value = } indicating that the full model is not significantly improve
             # Person goodness of fit test
             try:
                 pearson_prob = model.get_diagnostic().test_chisquare_prob()
-                print(f"The pearson goodness of fit test having degree of freedom of {round(pearson_prob.df, round_value)}, \
+                print(f"""The pearson goodness of fit test having degree of freedom of {round(pearson_prob.df, round_value)}, \
 with chi2 value of {round(pearson_prob.statistic, round_value)}, and p value of {round(pearson_prob.pvalue, round_value)}, which is \
-{["p < 0.05, indicate" if pearson_prob.pvalue < 0.05 else "p >= 0.05, indicate not"]} significant fit of the model based on {independent_variables} \
-against frequency of {dependent_variable}")
+{['p < 0.05, indicate' if pearson_prob.pvalue < 0.05 else 'p >= 0.05, indicate not']} significant fit of the model based on {independent_variables} \
+against frequency of {dependent_variable}""")
             except:
                 print("")
             print("=================================================================================================================")
@@ -914,18 +914,18 @@ against frequency of {dependent_variable}")
             if row["feature"] == "const":
                 continue
             if row["VIF"] >= 10:
-                print(f"Variable '{row['feature']}' has a VIF of {row['VIF']} and condition index of {row["condition_index"]}, indicating significant multicollinearity for this {dependent_variable}.")
+                print(f"Variable '{row['feature']}' has a VIF of {row['VIF']} and condition index of {row['condition_index']}, indicating significant multicollinearity for this {dependent_variable}.")
             elif row["VIF"] >= 5:
-                print(f"Variable '{row['feature']}' has a VIF of {row['VIF']} and condition index of {row["condition_index"]}, indicating potential multicollinearity that may be problematic for this {dependent_variable}.")
+                print(f"Variable '{row['feature']}' has a VIF of {row['VIF']} and condition index of {row['condition_index']}, indicating potential multicollinearity that may be problematic for this {dependent_variable}.")
             else:
-                print(f"Variable '{row['feature']}' has a VIF of {row['VIF']} and condition index of {row["condition_index"]}, indicating no significant multicollinearity for this {dependent_variable}.")
+                print(f"Variable '{row['feature']}' has a VIF of {row['VIF']} and condition index of {row['condition_index']}, indicating no significant multicollinearity for this {dependent_variable}.")
 
         if len(vif_data.loc[vif_data.loc[:,"VIF"] >= 10]) > 0:
-            print(f"There is independent variable that have VIF value more than 10 against {dependent_variable}, which are {list(vif_data.loc[vif_data.loc[:,"VIF"] >= 10, 'feature'])}.")
+            print(f"""There is independent variable that have VIF value more than 10 against {dependent_variable}, which are {list(vif_data.loc[vif_data.loc[:,"VIF"] >= 10, 'feature'])}.""")
         elif len(vif_data.query("VIF >= 5 and VIF < 10")) > 0:
-            print(f"There is independent variable that have VIF value more than 5 but less than 10 against {dependent_variable}, which are {list(vif_data.query("VIF >= 5 and VIF < 10").loc[:, 'feature'])}.")
+            print(f"""There is independent variable that have VIF value more than 5 but less than 10 against {dependent_variable}, which are {list(vif_data.query("VIF >= 5 and VIF < 10").loc[:, 'feature'])}.""")
         elif (len(vif_data.query("VIF < 5"))) >0:
-            print(f"The independent variable of {list(vif_data.query("VIF < 5").loc[:,'feature'])} shows no significant multicollinearity for {dependent_variable}.")
+            print(f"""The independent variable of {list(vif_data.query("VIF < 5").loc[:,'feature'])} shows no significant multicollinearity for {dependent_variable}.""")
 
     def crude_analysis(summary_model_df:pd.DataFrame, 
                        df:pd.DataFrame,
@@ -941,7 +941,7 @@ against frequency of {dependent_variable}")
         for index in summary_model_df.query("num_variables == 1").index:
             # Preparing the model
             model =summary_model_df.loc[index, "model"]
-            print(f"Crude analysis for {summary_model_df.loc[index, "variables"]}:")
+            print(f"""Crude analysis for {summary_model_df.loc[index, "variables"]}:""")
             regression.analyse_model(model = model, 
                                      df = df, 
                                      mode = mode,
@@ -972,9 +972,9 @@ against frequency of {dependent_variable}")
                                     index != "const" and index != "alpha" and not index.startswith('inflate_')]
         
         if len(significant_coefficients) > 0:
-            print(f"From the table above, {significant_coefficients} is having p value less than {p_value_cut_off}, which indicate the coefficients are statistically significant.")
+            print(f"""From the table above, {significant_coefficients} is having p value less than {p_value_cut_off}, which indicate the coefficients are statistically significant.""")
         if len(not_significatn_coefficients) > 0:
-            print(f"From the table above, {not_significatn_coefficients} is having p value more than {p_value_cut_off}, which indicate the coefficients are not statistically significant.")
+            print(f"""From the table above, {not_significatn_coefficients} is having p value more than {p_value_cut_off}, which indicate the coefficients are not statistically significant.""")
 
 
         return combine_params_df, combine_exp_params_df
@@ -1155,11 +1155,11 @@ f"Model 2 has {m2_n} observations.")
         print(confounder_summary_table.round(round_value).to_markdown(tablefmt = "pretty"))
         # Statement based on the len of list
         if len(confounder_list) > 0:
-            print(f"Noted coefficient of {fixed_independent_variable} changed more than 10% if model including {confounder_list} as shown on table above, indicating the {confounder_list} is possible confounder for the model above.")
+            print(f"""Noted coefficient of {fixed_independent_variable} changed more than 10% if model including {confounder_list} as shown on table above, indicating the {confounder_list} is possible confounder for the model above.""")
         else:
             print("No confounde factors was found in the model.")
         if len(not_confounder_list) > 0:
-            print(f"The coefficients of {not_confounder_list} did not change the b1 of {fixed_independent_variable} for more than 10%, indicating the variable of {not_confounder_list} not the confounder factors for the model.")
+            print(f"""The coefficients of {not_confounder_list} did not change the b1 of {fixed_independent_variable} for more than 10%, indicating the variable of {not_confounder_list} not the confounder factors for the model.""")
         
         # Return the summary table
         return confounder_summary_table

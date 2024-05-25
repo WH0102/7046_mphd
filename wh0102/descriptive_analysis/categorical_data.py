@@ -275,11 +275,11 @@ class categorical_data:
 
             # To print the intepretation for positive chi2 square test
             if len(positive_p_value_columns) > 0:
-                print(f"The chi2 test is positive and indicate there is an association between {dependent_variables} and {", ".join(positive_p_value_columns)}.")
+                print(f"""The chi2 test is positive and indicate there is an association between {dependent_variables} and {", ".join(positive_p_value_columns)}.""")
             
             # To print the intepretation for negative chi2 square test
             if len(negative_p_value_columns) > 0:
-                print(f"The chi2 test is negative and indicate there is no association between {dependent_variables} and {", ".join(negative_p_value_columns)}")
+                print(f"""The chi2 test is negative and indicate there is no association between {dependent_variables} and {", ".join(negative_p_value_columns)}""")
         
         else: # dependent_variables == None:
             # To loop through the independent variable columns
@@ -434,11 +434,11 @@ class categorical_data:
 
         # To print the intepretation for positive chi2 square test
         if len(positive_p_value_columns) > 0:
-            print(f"Theere is an association between {dependent_variables} and {", ".join(positive_p_value_columns)} as their {statistic_table["test_name"][0]} is positive with p value less than 0.05")
+            print(f"""Theere is an association between {dependent_variables} and {", ".join(positive_p_value_columns)} as their {statistic_table["test_name"][0]} is positive with p value less than 0.05""")
         
         # To print the intepretation for negative chi2 square test
         if len(negative_p_value_columns) > 0:
-            print(f"There is no association between {dependent_variables} and {", ".join(negative_p_value_columns)} as their {statistic_table["test_name"][0]} is negative with p value more than 0.05")
+            print(f"""There is no association between {dependent_variables} and {", ".join(negative_p_value_columns)} as their {statistic_table["test_name"][0]} is negative with p value more than 0.05""")
 
         # Generate depedent variables
         dependent_mean = np.mean(df.loc[:,dependent_variables])
