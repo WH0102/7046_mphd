@@ -37,7 +37,8 @@ From which a total of {len(to_drop_duplicated_df)} ({round(len(to_drop_duplicate
     def train_test_split(df:pd.DataFrame, 
                          independent_variables : list|tuple|set|str,
                          dependent_variable:str,
-                         test_size:float = 0.2) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+                         test_size:float = 0.2,
+                         random_seed:int|None = None) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         # import the necessary packages
         from sklearn.model_selection import train_test_split
 
@@ -48,7 +49,8 @@ From which a total of {len(to_drop_duplicated_df)} ({round(len(to_drop_duplicate
         X_train, X_test, y_train, y_test = train_test_split(df.loc[:,independent_variables],
                                                             df.loc[:,dependent_variable],
                                                             test_size=test_size,
-                                                            stratify=df.loc[:,dependent_variable])
+                                                            stratify=df.loc[:,dependent_variable],
+                                                            random_state=random_seed)
         
         # Return all dataframe
         return X_train, X_test, y_train, y_test
