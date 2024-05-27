@@ -109,7 +109,8 @@ class categorical_data:
                                          dependent_variables: str = None, 
                                          margins: bool = True,
                                          round_value: int = 2,
-                                         dependent_uniques_cut_off: int = 5) -> tuple[list, list]:
+                                         dependent_uniques_cut_off: int = 5,
+                                         analyse_dependent:bool = False) -> tuple[list, list]:
         """To summarize the categorical type of data in pandas.DataFrame
 
         Args:
@@ -119,6 +120,7 @@ class categorical_data:
             margins (bool, optional): To display the margisn of pandas.pivot_table or not. Defaults to True.
             round_value (int): To display the statistic table with round format or not. Defaults to 2.
             dependent_uniques_cut_off (int): Numbers used to cut of dependent variables as continous or categorical
+            analyse_dependent (bool): To decide need to analyse dependent variable or not. Defauilts to False.
 
         Raises:
             ValueError: If column name not within df.columns will raise this value error.
@@ -310,6 +312,35 @@ class categorical_data:
 
                 # Print a separator
                 print("----------------------------------------------------------------")
+
+        # To analyse dependent variables
+        if analyse_dependent == True:
+            # Convert with  pivot table
+            temp_pt = temp_df.pivot_table(index = dependent_variables, values = "index", 
+                                          aggfunc = len, margins = True)\
+                            .rename(columns = {"index":"count"})
+            
+            # Calculate percentage
+            temp_pt.loc[:,"percentage"] = (temp_pt.loc[:,"count"]/ temp_pt.loc["All", "count"] * 100).round(2)
+
+            print("-----------------------------------------------------------")
+            print("For dependent variable:")
+
+            # Check for margins
+            if margins == False:
+                temp_pt = temp_pt.drop(index = "All")
+
+            # print the dataframe
+            print(temp_pt.to_markdown(tablefmt = "pretty"))
+
+            if margins == True:
+                temp_pt = temp_pt.drop(index = "All")
+
+            # To plot pie/bar chart for independent_columns variable vs continous dependent data
+            fig, (ax1) = plt.subplots(nrows=1, ncols=1, figsize=(3, 3))
+            ax1.pie(temp_pt.loc[:,"count"], labels = temp_pt.index, autopct = '%1.2f%%')
+            ax1.set_title(f"Pie chart for {variable}")
+            plt.show()
 
         # Return empty statistic table
         return statistic_table

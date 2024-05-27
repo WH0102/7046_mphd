@@ -198,3 +198,55 @@ class continous_data:
 
         # Close the plot
         plt.close()
+
+    def identify_outliers(df:pd.DataFrame, 
+                          column_name:str|list|tuple, 
+                          num_stds:float=1.5):
+        """
+        This function identifies outliers in a pandas DataFrame.
+
+        Args:
+            data: The pandas DataFrame containing the data.
+            column_name: The name of the column to identify outliers in.
+            num_stds: The number of standard deviations to define an outlier (default: 1.5).
+
+        Returns:
+            A string containing information about the outliers, 
+            including the number of outliers, their indices, and their values.
+        """
+        # To tuple the colmns
+        columns = pre_processing.identify_independent_variable(column_name)
+
+        # Prepare empty dataframe
+        outliers_df = pd.DataFrame()
+
+        # To loop through the columns
+        for column_name in columns:
+            # Calculate the mean and standard deviation of the column
+            mean = df[column_name].mean()
+            std = df[column_name].std()
+
+            # Define the upper and lower bounds for outliers
+            upper_bound = mean + (num_stds * std)
+            lower_bound = mean - (num_stds * std)
+
+            # Identify outliers based on the bounds
+            outliers = df.loc[(df.loc[:,column_name] < lower_bound) | (df.loc[:,column_name] > upper_bound)]
+
+            # To proceed based on outliers length
+            if len(outliers) > 0:
+                # Concatenate with outliers_df
+                outliers_df = pd.concat([outliers_df, outliers], ignore_index=True).drop_duplicates()
+
+                # Print information about the outliers
+                print(f"Outliers found in column of {column_name}:")
+                print(outliers.to_markdown(tablefmt = "pretty"))
+                print("---------------------------------------------------------------")
+
+        if len(outliers_df) > 0:
+            print(f"The overall dataframe have total of {len(outliers_df)} ({len(outliers_df)/len(df)*100:.2f}%) found:")
+            print(outliers_df.to_markdown(tablefmt = "pretty"))
+        else:
+            print("Overall no outliers found in the dataframe with selected columns of {columns}")
+        
+        return outliers_df
