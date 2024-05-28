@@ -37,15 +37,8 @@ class machine_learning:
 
     def LightGBM(X_train:pd.DataFrame,
                  y_train:str|list|tuple|None,
-                 independent_variables_continous:str|list|tuple|None,
-                 n_estimators:list = [100, 300],
-                 max_depth:list = [3,4,5],
-                 min_child_weight = range(1,3,1),
-                 learning_rate = [0.1,0.2],
-                 booster = ['gbdt'],
-                 reg_alpha = [1e-5,0.01,0.03],
-                 weights = linspace(0.3, 0.9, 2),
-                 num_leaves = [6],
+                 params:dict,
+                 independent_variables_continous:str|list|tuple|None = None,
                  scoring:str = "roc_auc",
                  n_jobs:int = -1,
                  n_splits_for_lgbm:int = 5,
@@ -59,37 +52,12 @@ class machine_learning:
         from sklearn.preprocessing import MinMaxScaler, RobustScaler, StandardScaler
         from sklearn.model_selection import GridSearchCV, StratifiedKFold
         import time
-    
-        # Params
-        # n_estimators = [100, 300]
-        # max_depth = [3,4,5]
-        # min_child_weight = range(1,3,1)
-        # booster = ['gbdt']
-        # base_score = [0.5,0.6]
-        # learning_rate = [0.1,0.2]
-        # objective = ['binary']
-        # seed = [27]
-        # gamma= [0.7,0.8,0.9]
-        # colsample_bytree=[0.7,0.8,0.9]
-        # subsample=[0.6,0.7,0.8]
-        # reg_alpha = [1e-5,0.01,0.03]
-        # weights = linspace(0.3, 0.9, 2)
-        # num_leaves = [6]
 
-        lgbm_params = {'classifier__n_estimators': n_estimators, 
-                       'classifier__max_depth': max_depth,
-                       'classifier__learning_rate' : learning_rate, 
-                       'classifier__min_child_weight' : min_child_weight, 
-                       'classifier__boosting_type' : booster, 
-                       'smote__sampling_strategy': weights,
-                       'classifier__reg_alpha':reg_alpha, 
-                       'classifier__num_leaves':num_leaves}
-               
         # Preprocessing
         preprocessor = ColumnTransformer(
-            transformers=[('num', RobustScaler(), independent_variables_continous),], 
-            remainder='passthrough'
-        )
+                transformers=[('num', RobustScaler(), independent_variables_continous),], 
+                remainder='passthrough'
+            )
 
         pipeline = Pipeline([('smote', SMOTE(random_state=random_seed)),
                              ('scaler', preprocessor),
@@ -100,7 +68,7 @@ class machine_learning:
                                            random_state=random_seed)
         
         grid_search = GridSearchCV(estimator=pipeline,
-                                   param_grid=lgbm_params,
+                                   param_grid=params,
                                    scoring=scoring,
                                    cv=stratified_kfold,
                                    n_jobs=n_jobs)

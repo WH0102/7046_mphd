@@ -188,7 +188,7 @@ class continous_data:
         if plot_correlation == True:
             print("Plotting correlation matrix")
             # Set up the matplotlib figure
-            plt.figure(figsize=(6, 4))
+            plt.figure(figsize=(10, 6))
 
             # Draw heatmap for correlation matrix
             sns.heatmap(df.loc[:,all_variables].corr(), annot=True, cmap="coolwarm", linewidths=.5, fmt=".3f")
@@ -201,19 +201,24 @@ class continous_data:
 
     def identify_outliers(df:pd.DataFrame, 
                           column_name:str|list|tuple, 
-                          num_stds:float=1.5):
+                          ratio:float=1.5,
+                          normal_values:dict=None):
         """
         This function identifies outliers in a pandas DataFrame.
 
         Args:
             data: The pandas DataFrame containing the data.
             column_name: The name of the column to identify outliers in.
-            num_stds: The number of standard deviations to define an outlier (default: 1.5).
+            ratio: The number of standard deviations or interquatile ratio to define an outlier (default: 1.5).
+            normal_values: Dictionary that contain normal values.
 
         Returns:
             A string containing information about the outliers, 
             including the number of outliers, their indices, and their values.
         """
+        # Import necessary packages
+        from scipy.stats import skew, kurtosis, shapiro, norm, spearmanr, iqr
+
         # To tuple the colmns
         columns = pre_processing.identify_independent_variable(column_name)
 
@@ -222,16 +227,28 @@ class continous_data:
 
         # To loop through the columns
         for column_name in columns:
-            # Calculate the mean and standard deviation of the column
-            mean = df[column_name].mean()
-            std = df[column_name].std()
+            # Calculate shapiro
+            if shapiro(df.loc[:,column_name])[1] >= 0.05:
+                # Calculate the mean and standard deviation of the column, 
+                mean = df[column_name].mean()
+                std = df[column_name].std()
+                # Define the upper and lower bounds for outliers
+                upper_bound = mean + (ratio * std)
+                lower_bound = mean - (ratio * std)
+            else:
+                median = df.loc[:,column_name].median()
+                upper_bound = median + (ratio * iqr(df.loc[:,column_name]))
+                lower_bound = median - (ratio * iqr(df.loc[:,column_name]))
 
-            # Define the upper and lower bounds for outliers
-            upper_bound = mean + (num_stds * std)
-            lower_bound = mean - (num_stds * std)
+            # To set based on normal value as well
+            if normal_values != None:
+                if column_name in normal_values.keys():
+                    upper_bound = upper_bound if upper_bound > normal_values[column_name][1] else normal_values[column_name][1]
+                    lower_bound = lower_bound if lower_bound < normal_values[column_name][0] else normal_values[column_name][0]
 
             # Identify outliers based on the bounds
-            outliers = df.loc[(df.loc[:,column_name] < lower_bound) | (df.loc[:,column_name] > upper_bound)]
+            outliers = df.loc[(df.loc[:,column_name] < lower_bound) | (df.loc[:,column_name] > upper_bound)]\
+                         .sort_values(column_name, ascending = False)
 
             # To proceed based on outliers length
             if len(outliers) > 0:
@@ -239,7 +256,11 @@ class continous_data:
                 outliers_df = pd.concat([outliers_df, outliers], ignore_index=True).drop_duplicates()
 
                 # Print information about the outliers
-                print(f"Outliers found in column of {column_name}:")
+                print(f"Outliers found in column of {column_name} with boundaries of {lower_bound:,.2f} - {upper_bound:,.2f}:")
+                if normal_values != None:
+                    if column_name in normal_values.keys():
+                        print(f"Normal Value : {normal_values[column_name][0]} - {normal_values[column_name][1]}")
+                # Print the dataset
                 print(outliers.to_markdown(tablefmt = "pretty"))
                 print("---------------------------------------------------------------")
 
