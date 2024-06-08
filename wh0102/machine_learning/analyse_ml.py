@@ -27,10 +27,9 @@ class analyse_ml:
         import numpy as np
         from pprint import pprint
         from sklearn.metrics import (
-            roc_curve, roc_auc_score,
+            roc_curve, roc_auc_score, confusion_matrix,
             accuracy_score, precision_score, recall_score, f1_score, classification_report)
         from sklearn.feature_selection import RFE
-        from sklearn.metrics import confusion_matrix
         import matplotlib.pyplot as plt
 
         # Print Best Params
@@ -169,11 +168,24 @@ class analyse_ml:
                                 margins=True)\
                         .rename(index = {0:"False Condition",
                                         1:"True Condition"})
-                                
-
+        
         # Print the confusion matrix
         print("Confusion Matrix:")
         print(conf_matrix.to_markdown(tablefmt = "pretty"))
+        
+        # Compute the confusion matrix
+        conf_matrix = confusion_matrix(y_test, y_test_pred)
+
+        # Extract true positives, true negatives, false positives, and false negatives
+        tp = conf_matrix[1, 1]
+        tn = conf_matrix[0, 0]
+        fp = conf_matrix[0, 1]
+        fn = conf_matrix[1, 0]
+
+        # Calculate sensitivity, specificity, and accuracy
+        sensitivity = tp / (tp + fn) if (tp + fn) != 0 else 0
+        specificity = tn / (tn + fp) if (tn + fp) != 0 else 0
+        accuracy = (tp + tn) / (tp + tn + fp + fn)
 
         # Print classifiction report
         print("Classification Report")
