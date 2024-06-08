@@ -45,12 +45,15 @@ class analyse_ml:
         xgb_clf = best_estimator.named_steps["classifier"]
 
         # Variance due to method
-        if model_type == "Random Forest" or model_type == "LightGBM":
+        if model_type == "Decision Tree" or model_type == "Random Forest" or model_type =="XGB" or model_type == "LightGBM":
             # get the feature importances
             importances = xgb_clf.feature_importances_
         elif model_type == "Logistic Regression":
             # get the feature importances
             importances = list(xgb_clf.coef_[0])
+        elif model_type == "kNN" or model_type == "SVM":
+            from sklearn.inspection import permutation_importance
+            importances = permutation_importance(model, X_test, y_test).importances_mean
 
         # create a DataFrame with feature importances and feature names as columns
         importance_df = pd.DataFrame(data={'feature_names': independent_variables, 
@@ -69,7 +72,10 @@ class analyse_ml:
 
         # ROC Curve
         # Get the predicted probabilities for the test set
-        y_test_proba = best_estimator.predict_proba(X_test)[:, 1]
+        try:
+            y_test_proba = best_estimator.predict_proba(X_test)[:, 1]
+        except:
+            y_test_proba = best_estimator.predict(X_test)
 
         # Compute the fpr, tpr, and thresholds for the ROC curve
         fpr, tpr, thresholds = roc_curve(y_test, y_test_proba)

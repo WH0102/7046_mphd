@@ -122,12 +122,12 @@ class machine_learning:
         return grid_search, time_required
     
     def logisticRegression(X_train:pd.DataFrame,
-                      y_train:str|list|tuple|None,
-                      params:dict,
-                      scoring:str = "roc_auc",
-                      n_jobs:int = -1,
-                      n_splits:int = 5,
-                      random_seed:int|None = None):
+                           y_train:str|list|tuple|None,
+                           params:dict,
+                           scoring:str = "roc_auc",
+                           n_jobs:int = -1,
+                           n_splits:int = 5,
+                           random_seed:int|None = None):
         # Import the necessary packages
         from sklearn.linear_model import LogisticRegression
         from imblearn.pipeline import Pipeline
@@ -162,3 +162,172 @@ class machine_learning:
         print(f'Time taken: {end_time - start_time:.3f} seconds')
 
         return grid_search, time_required
+    
+    def knn(X_train:pd.DataFrame,
+            y_train:str|list|tuple|None,
+            params:dict,
+            scoring:str = "roc_auc",
+            n_jobs:int = -1,
+            n_splits:int = 5,
+            random_seed:int|None = None):
+        # Import the necessary packages
+        from sklearn.neighbors import KNeighborsClassifier
+        from imblearn.pipeline import Pipeline
+        from imblearn.over_sampling import SMOTE
+        from sklearn.model_selection import GridSearchCV, StratifiedKFold
+        from sklearn.preprocessing import RobustScaler
+        import time
+
+        # Define the pipeline
+        pipeline = Pipeline([
+            ('smote', SMOTE(random_state=random_seed)),
+            ('scaler', RobustScaler()),
+            ('classifier', KNeighborsClassifier())
+        ])
+
+        # Create the StratifiedKFold object
+        stratified_kfold = StratifiedKFold(n_splits=n_splits,
+                                            shuffle=True,
+                                            random_state=random_seed)
+        
+        # Create the GridSearchCV object
+        grid_search = GridSearchCV(estimator=pipeline,
+                                    param_grid=params,
+                                    scoring=scoring,
+                                    cv=stratified_kfold,
+                                    n_jobs=n_jobs)
+        
+        start_time = time.time()
+        grid_search.fit(X_train, y_train)
+        end_time = time.time()
+        time_required = end_time - start_time
+        print(f'Time taken: {end_time - start_time:.3f} seconds')
+
+        return grid_search, time_required
+    
+    def svm(X_train:pd.DataFrame,
+            y_train:str|list|tuple|None,
+            params:dict,
+            scoring:str = "roc_auc",
+            n_jobs:int = -1,
+            n_splits:int = 5,
+            random_seed:int|None = None):
+        # Import the necessary packages
+        from sklearn.svm import SVC
+        from imblearn.pipeline import Pipeline
+        from imblearn.over_sampling import SMOTE
+        from sklearn.model_selection import GridSearchCV, StratifiedKFold
+        from sklearn.preprocessing import RobustScaler
+        import time
+
+        # Define the pipeline
+        pipeline = Pipeline([
+            ('smote', SMOTE(random_state=random_seed)),
+            ('scaler', RobustScaler()),
+            ('classifier', SVC(probability=True))
+        ])
+
+        # Create the StratifiedKFold object
+        stratified_kfold = StratifiedKFold(n_splits=n_splits,
+                                            shuffle=True,
+                                            random_state=random_seed)
+        
+        # Create the GridSearchCV object
+        grid_search = GridSearchCV(estimator=pipeline,
+                                    param_grid=params,
+                                    scoring=scoring,
+                                    cv=stratified_kfold,
+                                    n_jobs=n_jobs)
+        
+        start_time = time.time()
+        grid_search.fit(X_train, y_train)
+        end_time = time.time()
+        time_required = end_time - start_time
+        print(f'Time taken: {end_time - start_time:.3f} seconds')
+
+        return grid_search, time_required
+    
+    def decision_tree(X_train:pd.DataFrame,
+                      y_train:str|list|tuple|None,
+                      params:dict,
+                      scoring:str = "roc_auc",
+                      n_jobs:int = -1,
+                      n_splits:int = 5,
+                      random_seed:int|None = None):
+        # Import the necessary packages
+        from sklearn.tree import DecisionTreeClassifier
+        from imblearn.pipeline import Pipeline
+        from imblearn.over_sampling import SMOTE
+        from sklearn.model_selection import GridSearchCV, StratifiedKFold
+        from sklearn.preprocessing import StandardScaler
+        import time
+
+        # Define the pipeline
+        pipeline = Pipeline([
+            ('smote', SMOTE(random_state=random_seed)),
+            ('scaler', StandardScaler()),
+            ('classifier', DecisionTreeClassifier())
+        ])
+
+        # Create the StratifiedKFold object
+        stratified_kfold = StratifiedKFold(n_splits=n_splits,
+                                            shuffle=True,
+                                            random_state=random_seed)
+        
+        # Create the GridSearchCV object
+        grid_search = GridSearchCV(estimator=pipeline,
+                                    param_grid=params,
+                                    scoring=scoring,
+                                    cv=stratified_kfold,
+                                    n_jobs=n_jobs)
+        
+        start_time = time.time()
+        grid_search.fit(X_train, y_train)
+        end_time = time.time()
+        time_required = end_time - start_time
+        print(f'Time taken: {end_time - start_time:.3f} seconds')
+
+        return grid_search, time_required
+    
+    def xgb(X_train:pd.DataFrame,
+            y_train:str|list|tuple|None,
+            params:dict,
+            scoring:str = "roc_auc",
+            n_jobs:int = -1,
+            n_splits:int = 5,
+            random_seed:int|None = None):
+        # Import the necessary packages
+        from xgboost import XGBClassifier
+        from imblearn.pipeline import Pipeline
+        from imblearn.over_sampling import SMOTE
+        from sklearn.model_selection import GridSearchCV, StratifiedKFold
+        from sklearn.preprocessing import RobustScaler
+        import time
+
+        # Define the pipeline
+        pipeline = Pipeline([
+            ('smote', SMOTE(random_state=random_seed)),
+            ('scaler', RobustScaler()),
+            ('classifier', XGBClassifier())
+        ])
+
+        # Create the StratifiedKFold object
+        stratified_kfold = StratifiedKFold(n_splits=n_splits,
+                                            shuffle=True,
+                                            random_state=random_seed)
+        
+        # Create the GridSearchCV object
+        grid_search = GridSearchCV(estimator=pipeline,
+                                    param_grid=params,
+                                    scoring=scoring,
+                                    cv=stratified_kfold,
+                                    n_jobs=n_jobs)
+        
+        start_time = time.time()
+        grid_search.fit(X_train, y_train)
+        end_time = time.time()
+        time_required = end_time - start_time
+        print(f'Time taken: {end_time - start_time:.3f} seconds')
+
+        return grid_search, time_required
+    
