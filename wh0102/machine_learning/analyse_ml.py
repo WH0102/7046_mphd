@@ -42,10 +42,15 @@ class analyse_ml:
         best_estimator = model.best_estimator_
 
         # extract the XGBClassifier from the pipeline
-        xgb_clf = best_estimator.named_steps['classifier']
+        xgb_clf = best_estimator.named_steps["classifier"]
 
-        # get the feature importances
-        importances = xgb_clf.feature_importances_
+        # Variance due to method
+        if model_type == "Random Forest" or model_type == "LightGBM":
+            # get the feature importances
+            importances = xgb_clf.feature_importances_
+        elif model_type == "Logistic Regression":
+            # get the feature importances
+            importances = list(xgb_clf.coef_[0])
 
         # create a DataFrame with feature importances and feature names as columns
         importance_df = pd.DataFrame(data={'feature_names': independent_variables, 
