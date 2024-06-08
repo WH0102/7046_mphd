@@ -202,7 +202,8 @@ class continous_data:
     def identify_outliers(df:pd.DataFrame, 
                           column_name:str|list|tuple, 
                           ratio:float=1.5,
-                          normal_values:dict=None):
+                          normal_values:dict=None,
+                          handle_outliers:str=None):
         """
         This function identifies outliers in a pandas DataFrame.
 
@@ -230,8 +231,8 @@ class continous_data:
             # Calculate shapiro
             if shapiro(df.loc[:,column_name])[1] >= 0.05:
                 # Calculate the mean and standard deviation of the column, 
-                mean = df[column_name].mean()
-                std = df[column_name].std()
+                mean = df.loc[:,column_name].mean()
+                std = df.loc[:,column_name].std()
                 # Define the upper and lower bounds for outliers
                 upper_bound = mean + (ratio * std)
                 lower_bound = mean - (ratio * std)
@@ -263,11 +264,17 @@ class continous_data:
                 # Print the dataset
                 print(outliers.to_markdown(tablefmt = "pretty"))
                 print("---------------------------------------------------------------")
+            
+            # To handle outliers
+                if handle_outliers == "cap":
+                    df.loc[(df.loc[:,column_name] < lower_bound), column_name] = lower_bound.astype(df.loc[:,column_name].dtypes)
+                    df.loc[(df.loc[:,column_name] > upper_bound), column_name] = upper_bound.astype(df.loc[:,column_name].dtypes)
 
         if len(outliers_df) > 0:
             print(f"The overall dataframe have total of {len(outliers_df)} ({len(outliers_df)/len(df)*100:.2f}%) found:")
             print(outliers_df.to_markdown(tablefmt = "pretty"))
         else:
             print("Overall no outliers found in the dataframe with selected columns of {columns}")
-        
+
+        # Return a dataframe
         return outliers_df
