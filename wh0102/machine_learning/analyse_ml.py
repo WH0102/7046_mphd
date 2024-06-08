@@ -28,7 +28,8 @@ class analyse_ml:
         from pprint import pprint
         from sklearn.metrics import (
             roc_curve, roc_auc_score, confusion_matrix,
-            accuracy_score, precision_score, recall_score, f1_score, classification_report)
+            accuracy_score, precision_score, recall_score, f1_score, classification_report,
+            mean_absolute_error, mean_squared_error)
         from sklearn.feature_selection import RFE
         import matplotlib.pyplot as plt
 
@@ -196,6 +197,8 @@ class analyse_ml:
                                    "time_required":[time_required],
                                    "accuracy_score":[accuracy_score(y_test, y_test_pred)],
                                    "precision_score":[precision_score(y_test, y_test_pred)],
+                                   "mean_squared_error":[mean_squared_error(y_test, y_test_pred)],
+                                   "mean_absolute_relative_difference":[mean_absolute_error(y_test, y_test_pred)/np.mean(y_test)], 
                                    "recall_score":[recall_score(y_test, y_test_pred)],
                                    "f1_score":[f1_score(y_test, y_test_pred)],
                                    "cv_score":[model.best_score_],
