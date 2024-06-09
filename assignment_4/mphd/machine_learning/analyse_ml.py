@@ -211,3 +211,40 @@ class analyse_ml:
                                    "max_youden_s_index":[max_youden_index]})
         
         return summary_df
+    
+    def plot_radar_graph(df:pd.DataFrame, model_column:str):
+        # import necessary packages
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from math import pi
+
+        # Number of variables
+        categories = list(df.columns[1:])
+        N = len(categories)
+
+        # What will be the angle of each axis in the plot? (we divide the plot / number of variables)
+        angles = [n / float(N) * 2 * pi for n in range(N)]
+        angles += angles[:1]
+
+        # Initialise the spider plot
+        fig, ax = plt.subplots(figsize=(10, 10), subplot_kw=dict(polar=True))
+
+        # Draw one axe per variable and add labels
+        plt.xticks(angles[:-1], categories, color='grey', size=8)
+
+        # Draw ylabels
+        ax.set_rlabel_position(0)
+        plt.yticks([0.2, 0.4, 0.6, 0.8], ["0.2", "0.4", "0.6", "0.8"], color="grey", size=7)
+        plt.ylim(0, 1)
+
+        # Plot each individual model
+        for i in range(len(df)):
+            values = df.loc[i].drop(model_column).values.flatten().tolist()
+            values += values[:1]
+            ax.plot(angles, values, linewidth=1, linestyle='solid', label=df[model_column][i])
+
+        # Add a legend
+        plt.legend(loc='upper right', bbox_to_anchor=(0.1, 0.1))
+
+        # Show the plot
+        plt.show()
