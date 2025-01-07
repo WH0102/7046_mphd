@@ -19,9 +19,38 @@ def main():
     if values_input:
         categories = [value.strip() for value in values_input.split(",")]
 
+    # Create two columns
+    col1, col2 = st.columns(2)
+
+    # Left column: Slider for range selection
+    with col1:
+        min_value, max_value = st.slider(
+            "Select a range (0 to 100):",
+            min_value=0,
+            max_value=100,
+            value=(0, 100),
+            step=1,
+        )
+        st.write(f"Selected Range: {min_value} to {max_value}")
+
+    # Right column: Slider for step size
+    with col2:
+        step_size = st.number_input(
+            "Insert a step size (1 to 10):",
+            min_value=1,
+            max_value=10,
+            value=1,
+            step=1,
+        )
+        st.write(f"Selected Step Size: {step_size}")
+
+    # Generate the range as a list
+    if min_value < max_value:
+        marks = list(range(min_value, max_value + 1, step_size))
+
     if names_input and values_input:
         # Marks for each iteration
-        marks = [4, 3, 2, 1]  # Distinct marks for each category
+        # marks = [4, 3, 2, 1]  # Distinct marks for each category
 
         # Store total marks for all members
         total_marks = {member: 0 for member in all_members}
