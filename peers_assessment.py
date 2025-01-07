@@ -36,9 +36,9 @@ def main():
     # Right column: Slider for step size
     with col2:
         step_size = st.number_input(
-            "Insert a step size (1 to 10):",
+            "Insert a step size (1 to 50):",
             min_value=1,
-            max_value=10,
+            max_value=50,
             value=1,
             step=1,
         )
