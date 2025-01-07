@@ -46,7 +46,7 @@ def main():
 
     # Generate the range as a list
     if min_value < max_value:
-        marks = list(range(min_value, max_value + 1, step_size))
+        marks = list(range(min_value, max_value + 1, step_size))[::-1]
 
     if names_input and values_input:
         # Marks for each iteration
