@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 
+# Set streamlit page configuration
+st.set_page_config(page_title = "Wei Hong's Small Project", page_icon = "random", layout = "wide")
+
 def main():
     # Title for the Streamlit app
     st.title("Peer Assessment Tricks")
