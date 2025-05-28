@@ -8,7 +8,7 @@ from scipy import stats
 
 # --- Streamlit App Configuration ---
 st.set_page_config(layout="wide")
-st.title("🏥 WH0102 Demo Hospital Flow Simulation")
+st.title("🏥 Demo Hospital Flow Simulation")
 st.markdown("""
 Simulates patient flow through Emergency Department (ED), ICU, and General Wards with:
 - ED boarding/congestion effects
